@@ -54,8 +54,10 @@ through stochastic neurons for conditional computation](https://doi.org/10.48550
 ## Installation
 
 Run `conda env create -f environment.yml` to create a conda environment 
-DAG-DB in Python 3.10.  I ran this in the Linux Mint 20.3 Cinnamon 
-operating system.
+DAG-DB in Python 3.10. 
+
+I used the the Linux Mint 20.3 Cinnamon operating system, but any Linux (at 
+least) should work.
 
 As described in `code/README.md`, some experiments use clones of other repos:
 - [`py-causal`](https://github.com/bd2kccd/py-causal)
