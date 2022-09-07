@@ -96,13 +96,13 @@ of the project.
 
 If you use this work, please cite my MSc thesis:
 
-@mastersthesis{DAG-DB,
-  title={Learning directed acyclic graphs by backpropagation},
-  author={Candidate~RTSC3},
-  year={2022},
-  month={Sept},
-  school={University College London},
-  url={https://github.com/DAG-DB/DAG-DB}
+@mastersthesis{DAG-DB,  
+&nbsp;&nbsp;&nbsp;&nbsp;title={Learning directed acyclic graphs by backpropagation},  
+&nbsp;&nbsp;&nbsp;&nbsp;author={Candidate~RTSC3},  
+&nbsp;&nbsp;&nbsp;&nbsp;year={2022},  
+&nbsp;&nbsp;&nbsp;&nbsp;month={Sept},  
+&nbsp;&nbsp;&nbsp;&nbsp;school={University College London},  
+&nbsp;&nbsp;&nbsp;&nbsp;url={ https://github.com/DAG-DB/DAG-DB }  
 }
 
 ## Disclaimer
