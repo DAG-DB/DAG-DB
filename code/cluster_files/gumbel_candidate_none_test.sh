@@ -1,0 +1,24 @@
+
+#!/bin/bash -l
+
+#$ -N "gumbel_candidate_none_test"
+#$ -cwd
+#$ -S /bin/bash
+#$ -o $HOME/I-MLE-DAG/cluster/cluster_logs/gumbel_candidate_none_test.out
+#$ -e $HOME/I-MLE-DAG/cluster/cluster_logs/gumbel_candidate_none_test.err
+
+#$ -l tmem=6G
+#$ -l h_rt=2:00:00
+#$ -l gpu=true
+
+hostname
+date
+
+# Activate my environment
+conda activate I-MLE-DAG
+
+CUDA_LAUNCH_BLOCKING=1
+
+# job_ID that didn't work in search_v1
+
+python3 $HOME/I-MLE-DAG/code/main_dag.py -c gumbel_candidate_none_test

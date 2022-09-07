@@ -1,0 +1,697 @@
+2022-08-19 BST 18:59:11,672 - INFO - 
+Log for run 2022-08-19_BST_18:59:11,337_l_66_4hps_050
+
+2022-08-19 BST 18:59:11,681 - INFO - COMMENT = ''
+2022-08-19 BST 18:59:11,681 - INFO - DATA_FOLDER = '../data'
+2022-08-19 BST 18:59:11,681 - INFO - LATENTS_FOLDER = '../latents'
+2022-08-19 BST 18:59:11,681 - INFO - LOGS_FOLDER = '../logs'
+2022-08-19 BST 18:59:11,681 - INFO - MODEL_FOLDER = '../models'
+2022-08-19 BST 18:59:11,681 - INFO - RESULTS_FOLDER = '../results'
+2022-08-19 BST 18:59:11,681 - INFO - DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")  # Used: "cuda"
+2022-08-19 BST 18:59:11,681 - INFO - LATENTS = False
+2022-08-19 BST 18:59:11,682 - INFO - MATRIX_REPORT = False
+2022-08-19 BST 18:59:11,682 - INFO - LABEL = True
+2022-08-19 BST 18:59:11,682 - INFO - SAVE_TO_ODS = False
+2022-08-19 BST 18:59:11,682 - INFO - VAL_LOSS_FROM_DAG = True
+2022-08-19 BST 18:59:11,682 - INFO - WANDB = False
+2022-08-19 BST 18:59:11,682 - INFO - WANDB_PROJECT = 'Thetas'
+2022-08-19 BST 18:59:11,682 - INFO - GRAD_LOG = False
+2022-08-19 BST 18:59:11,682 - INFO - N_TRIALS = 1
+2022-08-19 BST 18:59:11,682 - INFO - OPTUNA_STRINGS = {'None': None, 'True': True, 'False': False}
+2022-08-19 BST 18:59:11,682 - INFO - TQDM = False
+2022-08-19 BST 18:59:11,682 - INFO - 
+hyperparameters = {
+2022-08-19 BST 18:59:11,682 - INFO - 	'GRAPH_TYPE': 'ER2',
+2022-08-19 BST 18:59:11,682 - INFO - 	'D': 30,
+2022-08-19 BST 18:59:11,682 - INFO - 	'MAX_SIZE': 66,
+2022-08-19 BST 18:59:11,683 - INFO - 	'SEM_NOISE': 'gaussian_ev',
+2022-08-19 BST 18:59:11,683 - INFO - 	'N': 1200,
+2022-08-19 BST 18:59:11,683 - INFO - 	'VAL': 0.16666666666666666,
+2022-08-19 BST 18:59:11,683 - INFO - 	'N_EPOCHS': 1000,
+2022-08-19 BST 18:59:11,683 - INFO - 	'BATCH_SIZE': 32,
+2022-08-19 BST 18:59:11,683 - INFO - 	'LOG2_BATCH_SIZE': None,
+2022-08-19 BST 18:59:11,683 - INFO - 	'BATCH_SHUFFLE': True,
+2022-08-19 BST 18:59:11,683 - INFO - 	'N_SAMPLES': 10,
+2022-08-19 BST 18:59:11,683 - INFO - 	'MODE': 'max_dag_test_only',
+2022-08-19 BST 18:59:11,683 - INFO - 	'AFAS_SCHEDULER': None,
+2022-08-19 BST 18:59:11,683 - INFO - 	'MINIZINC_SOLVER': None,
+2022-08-19 BST 18:59:11,683 - INFO - 	'f_LINEAR_LAYERS': (),
+2022-08-19 BST 18:59:11,683 - INFO - 	'f_BIAS': False,
+2022-08-19 BST 18:59:11,683 - INFO - 	'p_LAYER': None,
+2022-08-19 BST 18:59:11,683 - INFO - 	'STREAMLINE': False,
+2022-08-19 BST 18:59:11,683 - INFO - 	'THRESHOLD': 0.0,
+2022-08-19 BST 18:59:11,683 - INFO - 	'h_LINEAR_LAYERS': (),
+2022-08-19 BST 18:59:11,683 - INFO - 	'h_NULL': 0.01,
+2022-08-19 BST 18:59:11,683 - INFO - 	'h_LR': 0.001,
+2022-08-19 BST 18:59:11,684 - INFO - 	'h_OPTIMIZER': 'torch.optim.Adam(overall_net.h_net.parameters(), lr=h.h_LR)',
+2022-08-19 BST 18:59:11,684 - INFO - 	'f_LR': 0.0117744218586073,
+2022-08-19 BST 18:59:11,684 - INFO - 	'f_OPTIMIZER': 'torch.optim.Adam(overall_net.f_net.parameters(), lr=h.f_LR)',
+2022-08-19 BST 18:59:11,684 - INFO - 	'NOISE_TEMPERATURE': 1,
+2022-08-19 BST 18:59:11,684 - INFO - 	'NOISE_DISTRIBUTION': 'LogisticNoiseDistribution()',
+2022-08-19 BST 18:59:11,684 - INFO - 	'LAMBDA': 0.1,
+2022-08-19 BST 18:59:11,684 - INFO - 	'LOSS_FN': 'torch.nn.MSELoss()',
+2022-08-19 BST 18:59:11,684 - INFO - 	'REGULARIZER': None,
+2022-08-19 BST 18:59:11,684 - INFO - 	'z_RHO': 0,
+2022-08-19 BST 18:59:11,684 - INFO - 	'z_MU': 0,
+2022-08-19 BST 18:59:11,684 - INFO - 	'z_REGULARIZER': 'NoTearsZRegularizer(h.D, h.z_RHO, h.z_MU, c.DEVICE)',
+2022-08-19 BST 18:59:11,684 - INFO - 	'LR_SCHEDULER': None,
+2022-08-19 BST 18:59:11,684 - INFO - 	'DATA_CATEGORY': 'test',
+2022-08-19 BST 18:59:11,684 - INFO - 	'DAGS': '030_ER2_gaussian_ev_2022-08-12_BST_09:55:21,293_create_dags'
+2022-08-19 BST 18:59:11,684 - INFO - }
+
+2022-08-19 BST 19:02:28,322 - INFO - 
+
+DAG 0: size_true=69	X.var()=185.8479
+2022-08-19 BST 19:04:10,341 - INFO -  epoch=   1      train_loss= 175.8963      val_loss= 105.2304      best=1      size=  60      nSHD_c=   3.8000      nSHD=   3.7667      tpr_c=   0.0833      change_adj_count=5      
+2022-08-19 BST 19:04:10,680 - INFO -  epoch=   2      train_loss= 156.0437      val_loss=  56.1103      best=1      size=  55      nSHD_c=   3.5333      nSHD=   3.5333      tpr_c=   0.1273      change_adj_count=6      
+2022-08-19 BST 19:04:36,365 - INFO -  epoch= 100      train_loss=  65.6873      val_loss= 916.0961      best=1      size=  58      nSHD_c=   2.9000      nSHD=   2.9000      tpr_c=   0.3448      change_adj_count=55      
+2022-08-19 BST 19:05:02,518 - INFO -  epoch= 200      train_loss=  46.2122      val_loss= 327.5982      best=1      size=  57      nSHD_c=   2.8333      nSHD=   2.8000      tpr_c=   0.3509      change_adj_count=86      
+2022-08-19 BST 19:05:28,764 - INFO -  epoch= 300      train_loss=  32.8038      val_loss= 123.6022      best=1      size=  55      nSHD_c=   2.7667      nSHD=   2.7333      tpr_c=   0.3636      change_adj_count=102      
+2022-08-19 BST 19:05:55,304 - INFO -  epoch= 400      train_loss=  24.9591      val_loss=  61.1693      best=1      size=  53      nSHD_c=   2.7333      nSHD=   2.7333      tpr_c=   0.3774      change_adj_count=121      
+2022-08-19 BST 19:06:21,470 - INFO -  epoch= 500      train_loss=  19.8981      val_loss=  41.3949      best=1      size=  53      nSHD_c=   2.7667      nSHD=   2.7333      tpr_c=   0.3585      change_adj_count=136      
+2022-08-19 BST 19:06:47,829 - INFO -  epoch= 600      train_loss=  18.1692      val_loss=  30.7436      best=1      size=  51      nSHD_c=   2.7667      nSHD=   2.7333      tpr_c=   0.3529      change_adj_count=149      
+2022-08-19 BST 19:07:13,958 - INFO -  epoch= 699      train_loss=  14.7399      val_loss=  24.3393      best=1      size=  49      nSHD_c=   2.6333      nSHD=   2.6000      tpr_c=   0.3878      change_adj_count=163      
+2022-08-19 BST 19:07:14,272 - INFO -  epoch= 700      train_loss=  15.1931      val_loss=  22.8684      best=1      size=  49      nSHD_c=   2.6333      nSHD=   2.6000      tpr_c=   0.3878      change_adj_count=163      
+2022-08-19 BST 19:07:18,684 - INFO -  epoch= 717      train_loss=  14.5363      val_loss=  24.1560      best=1      size=  49      nSHD_c=   2.6333      nSHD=   2.6000      tpr_c=   0.3878      change_adj_count=163      
+2022-08-19 BST 19:07:31,181 - INFO -  epoch= 764      train_loss=  13.9624      val_loss=  22.3283      best=1      size=  49      nSHD_c=   2.6333      nSHD=   2.6000      tpr_c=   0.3878      change_adj_count=169      
+2022-08-19 BST 19:07:34,992 - INFO -  epoch= 778      train_loss=  13.5453      val_loss=  21.4708      best=1      size=  49      nSHD_c=   2.6333      nSHD=   2.6000      tpr_c=   0.3878      change_adj_count=171      
+2022-08-19 BST 19:07:39,625 - INFO -  epoch= 795      train_loss=  13.6983      val_loss=  18.8590      best=1      size=  50      nSHD_c=   2.5667      nSHD=   2.5000      tpr_c=   0.4000      change_adj_count=177      
+2022-08-19 BST 19:07:40,605 - INFO -  epoch= 798      train_loss=  13.5105      val_loss=  19.7425      best=1      size=  50      nSHD_c=   2.5667      nSHD=   2.5000      tpr_c=   0.4000      change_adj_count=177      
+2022-08-19 BST 19:07:41,221 - INFO -  epoch= 800      train_loss=  13.6155      val_loss=  20.0878      best=1      size=  50      nSHD_c=   2.5667      nSHD=   2.5000      tpr_c=   0.4000      change_adj_count=177      
+2022-08-19 BST 19:07:52,424 - INFO -  epoch= 842      train_loss=  12.6354      val_loss=  18.6838      best=1      size=  51      nSHD_c=   2.5667      nSHD=   2.4667      tpr_c=   0.3922      change_adj_count=178      
+2022-08-19 BST 19:07:52,709 - INFO -  epoch= 843      train_loss=  12.6650      val_loss=  18.3156      best=1      size=  51      nSHD_c=   2.5667      nSHD=   2.4667      tpr_c=   0.3922      change_adj_count=178      
+2022-08-19 BST 19:07:59,067 - INFO -  epoch= 867      train_loss=  12.4164      val_loss=  19.2274      best=1      size=  51      nSHD_c=   2.5667      nSHD=   2.4667      tpr_c=   0.3922      change_adj_count=180      
+2022-08-19 BST 19:07:59,697 - INFO -  epoch= 869      train_loss=  12.4676      val_loss=  19.0547      best=1      size=  51      nSHD_c=   2.5667      nSHD=   2.4667      tpr_c=   0.3922      change_adj_count=180      
+2022-08-19 BST 19:08:06,951 - INFO -  epoch= 897      train_loss=  12.1663      val_loss=  18.2342      best=1      size=  51      nSHD_c=   2.5333      nSHD=   2.4000      tpr_c=   0.3922      change_adj_count=183      
+2022-08-19 BST 19:08:07,862 - INFO -  epoch= 900      train_loss=  12.1403      val_loss=  18.0452      best=1      size=  51      nSHD_c=   2.5333      nSHD=   2.4000      tpr_c=   0.3922      change_adj_count=184      
+2022-08-19 BST 19:08:13,361 - INFO -  epoch= 920      train_loss=  12.0312      val_loss=  17.0658      best=1      size=  51      nSHD_c=   2.5333      nSHD=   2.4000      tpr_c=   0.3922      change_adj_count=188      
+2022-08-19 BST 19:08:13,676 - INFO -  epoch= 921      train_loss=  12.5011      val_loss=  16.6629      best=1      size=  51      nSHD_c=   2.5333      nSHD=   2.4000      tpr_c=   0.3922      change_adj_count=188      
+2022-08-19 BST 19:08:18,405 - INFO -  epoch= 939      train_loss=  11.9028      val_loss=  17.2758      best=1      size=  51      nSHD_c=   2.5333      nSHD=   2.4000      tpr_c=   0.3922      change_adj_count=189      
+2022-08-19 BST 19:08:34,616 - INFO -  epoch=1000      train_loss=  11.4732      val_loss=  21.2139      best=1      size=  52      nSHD_c=   2.5667      nSHD=   2.4333      tpr_c=   0.3846      change_adj_count=198      
+2022-08-19 BST 19:08:34,618 - INFO - 
+
+DAG 1: size_true=67	X.var()=127.1156
+2022-08-19 BST 19:08:34,984 - INFO -  epoch=   1      train_loss= 116.5176      val_loss=  86.2364      best=1      size=  57      nSHD_c=   3.7333      nSHD=   3.7333      tpr_c=   0.0702      change_adj_count=5      
+2022-08-19 BST 19:08:35,325 - INFO -  epoch=   2      train_loss= 102.2927      val_loss=  32.9664      best=1      size=  57      nSHD_c=   3.5000      nSHD=   3.5000      tpr_c=   0.1228      change_adj_count=6      
+2022-08-19 BST 19:09:01,272 - INFO -  epoch= 100      train_loss=  45.2382      val_loss=1421.5257      best=1      size=  60      nSHD_c=   3.5333      nSHD=   3.5000      tpr_c=   0.1667      change_adj_count=64      
+2022-08-19 BST 19:09:27,091 - INFO -  epoch= 200      train_loss=  36.2796      val_loss= 711.4542      best=1      size=  60      nSHD_c=   3.5333      nSHD=   3.5000      tpr_c=   0.1667      change_adj_count=78      
+2022-08-19 BST 19:09:52,526 - INFO -  epoch= 300      train_loss=  30.0428      val_loss= 405.2081      best=1      size=  60      nSHD_c=   3.5667      nSHD=   3.5000      tpr_c=   0.1500      change_adj_count=96      
+2022-08-19 BST 19:10:17,641 - INFO -  epoch= 400      train_loss=  25.4446      val_loss= 262.7378      best=1      size=  60      nSHD_c=   3.5333      nSHD=   3.5000      tpr_c=   0.1667      change_adj_count=106      
+2022-08-19 BST 19:10:42,682 - INFO -  epoch= 500      train_loss=  22.0077      val_loss= 164.5118      best=1      size=  60      nSHD_c=   3.5333      nSHD=   3.5000      tpr_c=   0.1667      change_adj_count=111      
+2022-08-19 BST 19:11:07,491 - INFO -  epoch= 600      train_loss=  19.0702      val_loss= 114.4034      best=1      size=  60      nSHD_c=   3.5333      nSHD=   3.5000      tpr_c=   0.1667      change_adj_count=113      
+2022-08-19 BST 19:11:32,755 - INFO -  epoch= 700      train_loss=  15.9544      val_loss=  69.2503      best=1      size=  58      nSHD_c=   3.4667      nSHD=   3.4333      tpr_c=   0.1724      change_adj_count=122      
+2022-08-19 BST 19:11:58,047 - INFO -  epoch= 800      train_loss=  14.8126      val_loss=  43.7386      best=1      size=  58      nSHD_c=   3.3667      nSHD=   3.3667      tpr_c=   0.2069      change_adj_count=126      
+2022-08-19 BST 19:12:23,137 - INFO -  epoch= 900      train_loss=  13.2183      val_loss=  35.0576      best=1      size=  58      nSHD_c=   3.4333      nSHD=   3.4333      tpr_c=   0.1897      change_adj_count=131      
+2022-08-19 BST 19:12:48,287 - INFO -  epoch=1000      train_loss=  12.3574      val_loss=  22.0284      best=1      size=  58      nSHD_c=   3.2667      nSHD=   3.1667      tpr_c=   0.2069      change_adj_count=145      
+2022-08-19 BST 19:12:48,288 - INFO - 
+
+DAG 2: size_true=64	X.var()=25.7432
+2022-08-19 BST 19:12:48,710 - INFO -  epoch=   1      train_loss=  24.2927      val_loss=  23.1745      best=1      size=  57      nSHD_c=   3.6000      nSHD=   3.5667      tpr_c=   0.0877      change_adj_count=5      
+2022-08-19 BST 19:12:49,068 - INFO -  epoch=   2      train_loss=  22.4550      val_loss=  19.0722      best=1      size=  56      nSHD_c=   3.5000      nSHD=   3.4667      tpr_c=   0.1071      change_adj_count=6      
+2022-08-19 BST 19:12:49,459 - INFO -  epoch=   3      train_loss=  21.6832      val_loss=  14.4595      best=1      size=  56      nSHD_c=   3.3667      nSHD=   3.3333      tpr_c=   0.1250      change_adj_count=7      
+2022-08-19 BST 19:13:13,621 - INFO -  epoch= 100      train_loss=  18.2391      val_loss=  59.7541      best=1      size=  55      nSHD_c=   2.6000      nSHD=   2.5667      tpr_c=   0.3636      change_adj_count=93      
+2022-08-19 BST 19:13:38,256 - INFO -  epoch= 200      train_loss=  17.1179      val_loss=  49.5665      best=1      size=  59      nSHD_c=   2.7000      nSHD=   2.6333      tpr_c=   0.3390      change_adj_count=144      
+2022-08-19 BST 19:14:02,878 - INFO -  epoch= 300      train_loss=  14.9715      val_loss=  34.6386      best=1      size=  54      nSHD_c=   2.6667      nSHD=   2.6000      tpr_c=   0.3333      change_adj_count=194      
+2022-08-19 BST 19:14:28,467 - INFO -  epoch= 400      train_loss=  12.3418      val_loss=  21.4069      best=1      size=  54      nSHD_c=   2.6333      nSHD=   2.6000      tpr_c=   0.3519      change_adj_count=223      
+2022-08-19 BST 19:14:53,111 - INFO -  epoch= 500      train_loss=  10.9380      val_loss=  16.7528      best=1      size=  53      nSHD_c=   2.4667      nSHD=   2.4333      tpr_c=   0.3962      change_adj_count=240      
+2022-08-19 BST 19:15:17,998 - INFO -  epoch= 600      train_loss=   9.6296      val_loss=  15.7222      best=1      size=  52      nSHD_c=   2.4667      nSHD=   2.4000      tpr_c=   0.3846      change_adj_count=258      
+2022-08-19 BST 19:15:42,712 - INFO -  epoch= 700      train_loss=   8.8887      val_loss=  12.4505      best=1      size=  51      nSHD_c=   2.3333      nSHD=   2.3000      tpr_c=   0.4314      change_adj_count=277      
+2022-08-19 BST 19:16:07,864 - INFO -  epoch= 800      train_loss=   7.9267      val_loss=  13.2558      best=1      size=  52      nSHD_c=   2.4333      nSHD=   2.3667      tpr_c=   0.3846      change_adj_count=285      
+2022-08-19 BST 19:16:09,598 - INFO -  epoch= 808      train_loss=   7.9683      val_loss=  12.2642      best=1      size=  52      nSHD_c=   2.4667      nSHD=   2.4333      tpr_c=   0.3846      change_adj_count=288      
+2022-08-19 BST 19:16:16,808 - INFO -  epoch= 836      train_loss=   7.7828      val_loss=  12.1023      best=1      size=  52      nSHD_c=   2.4667      nSHD=   2.4333      tpr_c=   0.3846      change_adj_count=301      
+2022-08-19 BST 19:16:17,054 - INFO -  epoch= 837      train_loss=   7.6867      val_loss=  11.8183      best=1      size=  52      nSHD_c=   2.4667      nSHD=   2.4333      tpr_c=   0.3846      change_adj_count=302      
+2022-08-19 BST 19:16:24,553 - INFO -  epoch= 866      train_loss=   7.5731      val_loss=  11.5094      best=1      size=  52      nSHD_c=   2.4333      nSHD=   2.3667      tpr_c=   0.3846      change_adj_count=309      
+2022-08-19 BST 19:16:25,093 - INFO -  epoch= 868      train_loss=   7.3317      val_loss=  11.6316      best=1      size=  52      nSHD_c=   2.4333      nSHD=   2.3667      tpr_c=   0.3846      change_adj_count=309      
+2022-08-19 BST 19:16:25,388 - INFO -  epoch= 869      train_loss=   7.6406      val_loss=  11.9844      best=1      size=  52      nSHD_c=   2.4333      nSHD=   2.3667      tpr_c=   0.3846      change_adj_count=309      
+2022-08-19 BST 19:16:25,880 - INFO -  epoch= 871      train_loss=   7.4053      val_loss=  11.3226      best=1      size=  52      nSHD_c=   2.4333      nSHD=   2.3667      tpr_c=   0.3846      change_adj_count=309      
+2022-08-19 BST 19:16:27,065 - INFO -  epoch= 876      train_loss=   7.4833      val_loss=  11.1516      best=1      size=  52      nSHD_c=   2.4333      nSHD=   2.3667      tpr_c=   0.3846      change_adj_count=309      
+2022-08-19 BST 19:16:32,918 - INFO -  epoch= 899      train_loss=   7.2639      val_loss=  11.0544      best=1      size=  52      nSHD_c=   2.5000      nSHD=   2.4333      tpr_c=   0.3654      change_adj_count=312      
+2022-08-19 BST 19:16:33,208 - INFO -  epoch= 900      train_loss=   7.4869      val_loss=  11.6387      best=1      size=  52      nSHD_c=   2.5000      nSHD=   2.4333      tpr_c=   0.3654      change_adj_count=312      
+2022-08-19 BST 19:16:33,951 - INFO -  epoch= 903      train_loss=   7.3074      val_loss=  10.7951      best=1      size=  52      nSHD_c=   2.5000      nSHD=   2.4333      tpr_c=   0.3654      change_adj_count=312      
+2022-08-19 BST 19:16:35,590 - INFO -  epoch= 910      train_loss=   7.2514      val_loss=  11.4753      best=1      size=  52      nSHD_c=   2.5000      nSHD=   2.3667      tpr_c=   0.3462      change_adj_count=314      
+2022-08-19 BST 19:16:37,282 - INFO -  epoch= 916      train_loss=   7.1647      val_loss=  11.0020      best=1      size=  51      nSHD_c=   2.4667      nSHD=   2.3333      tpr_c=   0.3529      change_adj_count=315      
+2022-08-19 BST 19:16:37,813 - INFO -  epoch= 918      train_loss=   7.1502      val_loss=  10.7937      best=1      size=  52      nSHD_c=   2.5000      nSHD=   2.3667      tpr_c=   0.3462      change_adj_count=316      
+2022-08-19 BST 19:16:38,125 - INFO -  epoch= 919      train_loss=   7.2131      val_loss=  11.0062      best=1      size=  52      nSHD_c=   2.5000      nSHD=   2.3667      tpr_c=   0.3462      change_adj_count=316      
+2022-08-19 BST 19:16:38,498 - INFO -  epoch= 920      train_loss=   7.3230      val_loss=  11.0733      best=1      size=  52      nSHD_c=   2.5000      nSHD=   2.3667      tpr_c=   0.3462      change_adj_count=316      
+2022-08-19 BST 19:16:38,770 - INFO -  epoch= 921      train_loss=   7.1341      val_loss=  10.9388      best=1      size=  52      nSHD_c=   2.5000      nSHD=   2.3667      tpr_c=   0.3462      change_adj_count=316      
+2022-08-19 BST 19:16:39,281 - INFO -  epoch= 923      train_loss=   7.2134      val_loss=  10.6124      best=1      size=  52      nSHD_c=   2.5000      nSHD=   2.3667      tpr_c=   0.3462      change_adj_count=316      
+2022-08-19 BST 19:16:41,463 - INFO -  epoch= 931      train_loss=   7.2321      val_loss=  10.4509      best=1      size=  51      nSHD_c=   2.4667      nSHD=   2.3333      tpr_c=   0.3529      change_adj_count=317      
+2022-08-19 BST 19:16:44,618 - INFO -  epoch= 944      train_loss=   7.1783      val_loss=  10.1197      best=1      size=  51      nSHD_c=   2.4667      nSHD=   2.3333      tpr_c=   0.3529      change_adj_count=317      
+2022-08-19 BST 19:16:51,843 - INFO -  epoch= 969      train_loss=   6.8636      val_loss=  10.1437      best=1      size=  51      nSHD_c=   2.4333      nSHD=   2.3333      tpr_c=   0.3725      change_adj_count=321      
+2022-08-19 BST 19:16:59,518 - INFO -  epoch=1000      train_loss=   6.7604      val_loss=  10.6952      best=1      size=  51      nSHD_c=   2.4333      nSHD=   2.3333      tpr_c=   0.3725      change_adj_count=321      
+2022-08-19 BST 19:16:59,518 - INFO - 
+
+DAG 3: size_true=63	X.var()=265.9248
+2022-08-19 BST 19:16:59,811 - INFO -  epoch=   1      train_loss= 223.3438      val_loss= 197.1038      best=1      size=  60      nSHD_c=   3.6000      nSHD=   3.6000      tpr_c=   0.1000      change_adj_count=5      
+2022-08-19 BST 19:17:00,089 - INFO -  epoch=   2      train_loss= 178.1274      val_loss= 183.1587      best=1      size=  59      nSHD_c=   3.4333      nSHD=   3.4333      tpr_c=   0.1356      change_adj_count=6      
+2022-08-19 BST 19:17:24,159 - INFO -  epoch= 100      train_loss=  95.4662      val_loss=1434.3417      best=1      size=  53      nSHD_c=   3.1667      nSHD=   3.1667      tpr_c=   0.1698      change_adj_count=75      
+2022-08-19 BST 19:17:49,339 - INFO -  epoch= 200      train_loss=  74.5881      val_loss= 616.7197      best=1      size=  52      nSHD_c=   3.1000      nSHD=   3.1000      tpr_c=   0.1923      change_adj_count=102      
+2022-08-19 BST 19:18:14,246 - INFO -  epoch= 300      train_loss=  58.9394      val_loss= 342.8606      best=1      size=  50      nSHD_c=   3.0333      nSHD=   3.0333      tpr_c=   0.2000      change_adj_count=112      
+2022-08-19 BST 19:18:39,516 - INFO -  epoch= 400      train_loss=  51.5033      val_loss= 180.8351      best=1      size=  49      nSHD_c=   3.0000      nSHD=   3.0000      tpr_c=   0.1837      change_adj_count=131      
+2022-08-19 BST 19:19:04,698 - INFO -  epoch= 500      train_loss=  39.5852      val_loss= 138.1073      best=1      size=  47      nSHD_c=   2.9667      nSHD=   2.9667      tpr_c=   0.1915      change_adj_count=147      
+2022-08-19 BST 19:19:09,876 - INFO -  epoch= 519      train_loss=  38.5742      val_loss= 110.9713      best=1      size=  46      nSHD_c=   2.9000      nSHD=   2.9000      tpr_c=   0.1957      change_adj_count=152      
+2022-08-19 BST 19:19:11,215 - INFO -  epoch= 524      train_loss=  39.5619      val_loss= 109.1478      best=1      size=  47      nSHD_c=   2.9333      nSHD=   2.9333      tpr_c=   0.1915      change_adj_count=154      
+2022-08-19 BST 19:19:22,622 - INFO -  epoch= 567      train_loss=  35.2698      val_loss=  98.7222      best=1      size=  47      nSHD_c=   2.9667      nSHD=   2.9667      tpr_c=   0.1915      change_adj_count=160      
+2022-08-19 BST 19:19:22,950 - INFO -  epoch= 568      train_loss=  34.9152      val_loss=  93.9016      best=1      size=  47      nSHD_c=   2.9667      nSHD=   2.9667      tpr_c=   0.1915      change_adj_count=160      
+2022-08-19 BST 19:19:26,030 - INFO -  epoch= 580      train_loss=  33.2606      val_loss=  84.0637      best=1      size=  47      nSHD_c=   2.9667      nSHD=   2.9667      tpr_c=   0.1915      change_adj_count=160      
+2022-08-19 BST 19:19:26,332 - INFO -  epoch= 581      train_loss=  35.2680      val_loss=  89.0371      best=1      size=  47      nSHD_c=   2.9667      nSHD=   2.9667      tpr_c=   0.1915      change_adj_count=160      
+2022-08-19 BST 19:19:26,716 - INFO -  epoch= 582      train_loss=  33.5397      val_loss=  85.6984      best=1      size=  47      nSHD_c=   2.9667      nSHD=   2.9667      tpr_c=   0.1915      change_adj_count=160      
+2022-08-19 BST 19:19:28,941 - INFO -  epoch= 590      train_loss=  33.0454      val_loss=  86.5014      best=1      size=  47      nSHD_c=   2.9667      nSHD=   2.9667      tpr_c=   0.1915      change_adj_count=160      
+2022-08-19 BST 19:19:31,538 - INFO -  epoch= 600      train_loss=  31.7771      val_loss=  77.4158      best=1      size=  49      nSHD_c=   3.0000      nSHD=   3.0000      tpr_c=   0.1837      change_adj_count=161      
+2022-08-19 BST 19:19:32,568 - INFO -  epoch= 604      train_loss=  33.0212      val_loss=  72.8374      best=1      size=  48      nSHD_c=   2.9667      nSHD=   2.9667      tpr_c=   0.1875      change_adj_count=163      
+2022-08-19 BST 19:19:34,137 - INFO -  epoch= 610      train_loss=  31.9788      val_loss=  71.4029      best=1      size=  48      nSHD_c=   2.9667      nSHD=   2.9333      tpr_c=   0.1875      change_adj_count=166      
+2022-08-19 BST 19:19:34,888 - INFO -  epoch= 613      train_loss=  32.5718      val_loss=  78.4200      best=1      size=  48      nSHD_c=   2.9667      nSHD=   2.9333      tpr_c=   0.1875      change_adj_count=166      
+2022-08-19 BST 19:19:35,207 - INFO -  epoch= 614      train_loss=  32.2824      val_loss=  73.0530      best=1      size=  48      nSHD_c=   2.9667      nSHD=   2.9333      tpr_c=   0.1875      change_adj_count=166      
+2022-08-19 BST 19:19:36,200 - INFO -  epoch= 617      train_loss=  31.8061      val_loss=  69.6854      best=1      size=  48      nSHD_c=   2.9667      nSHD=   2.9333      tpr_c=   0.1875      change_adj_count=166      
+2022-08-19 BST 19:19:36,518 - INFO -  epoch= 618      train_loss=  30.6387      val_loss=  69.6805      best=1      size=  48      nSHD_c=   2.9667      nSHD=   2.9333      tpr_c=   0.1875      change_adj_count=166      
+2022-08-19 BST 19:19:37,425 - INFO -  epoch= 621      train_loss=  31.2176      val_loss=  61.3788      best=1      size=  48      nSHD_c=   2.9667      nSHD=   2.9333      tpr_c=   0.1875      change_adj_count=167      
+2022-08-19 BST 19:19:41,174 - INFO -  epoch= 635      train_loss=  29.8016      val_loss=  57.3140      best=1      size=  48      nSHD_c=   2.9000      nSHD=   2.9000      tpr_c=   0.2083      change_adj_count=171      
+2022-08-19 BST 19:19:42,015 - INFO -  epoch= 638      train_loss=  29.4128      val_loss=  54.6279      best=1      size=  48      nSHD_c=   2.9000      nSHD=   2.9000      tpr_c=   0.2083      change_adj_count=171      
+2022-08-19 BST 19:19:42,571 - INFO -  epoch= 640      train_loss=  29.4739      val_loss=  59.4875      best=1      size=  47      nSHD_c=   2.9333      nSHD=   2.9000      tpr_c=   0.1915      change_adj_count=172      
+2022-08-19 BST 19:19:43,088 - INFO -  epoch= 642      train_loss=  29.0874      val_loss=  55.6717      best=1      size=  47      nSHD_c=   2.9333      nSHD=   2.9000      tpr_c=   0.1915      change_adj_count=172      
+2022-08-19 BST 19:19:49,308 - INFO -  epoch= 665      train_loss=  27.3248      val_loss=  60.4167      best=1      size=  47      nSHD_c=   2.9000      nSHD=   2.8333      tpr_c=   0.1915      change_adj_count=173      
+2022-08-19 BST 19:19:51,044 - INFO -  epoch= 671      train_loss=  27.6856      val_loss=  54.5337      best=1      size=  47      nSHD_c=   2.9000      nSHD=   2.8333      tpr_c=   0.1915      change_adj_count=173      
+2022-08-19 BST 19:19:52,360 - INFO -  epoch= 676      train_loss=  26.4732      val_loss=  58.4854      best=1      size=  47      nSHD_c=   2.9000      nSHD=   2.8333      tpr_c=   0.1915      change_adj_count=173      
+2022-08-19 BST 19:19:52,913 - INFO -  epoch= 678      train_loss=  26.7882      val_loss=  52.8696      best=1      size=  47      nSHD_c=   2.9000      nSHD=   2.8333      tpr_c=   0.1915      change_adj_count=173      
+2022-08-19 BST 19:19:54,432 - INFO -  epoch= 683      train_loss=  26.2424      val_loss=  55.5568      best=1      size=  47      nSHD_c=   2.9000      nSHD=   2.8333      tpr_c=   0.1915      change_adj_count=173      
+2022-08-19 BST 19:19:56,993 - INFO -  epoch= 693      train_loss=  25.0065      val_loss=  57.9930      best=1      size=  46      nSHD_c=   2.8333      nSHD=   2.8333      tpr_c=   0.2174      change_adj_count=175      
+2022-08-19 BST 19:19:57,273 - INFO -  epoch= 694      train_loss=  24.6218      val_loss=  54.0403      best=1      size=  46      nSHD_c=   2.8333      nSHD=   2.8333      tpr_c=   0.2174      change_adj_count=175      
+2022-08-19 BST 19:19:57,563 - INFO -  epoch= 695      train_loss=  25.3941      val_loss=  53.4146      best=1      size=  46      nSHD_c=   2.8333      nSHD=   2.8333      tpr_c=   0.2174      change_adj_count=175      
+2022-08-19 BST 19:19:58,155 - INFO -  epoch= 697      train_loss=  25.1425      val_loss=  52.9161      best=1      size=  46      nSHD_c=   2.8333      nSHD=   2.8333      tpr_c=   0.2174      change_adj_count=175      
+2022-08-19 BST 19:19:59,061 - INFO -  epoch= 700      train_loss=  25.1474      val_loss=  53.5744      best=1      size=  46      nSHD_c=   2.8333      nSHD=   2.8333      tpr_c=   0.2174      change_adj_count=175      
+2022-08-19 BST 19:20:01,988 - INFO -  epoch= 711      train_loss=  24.3729      val_loss=  45.2108      best=1      size=  47      nSHD_c=   2.8667      nSHD=   2.8667      tpr_c=   0.2128      change_adj_count=176      
+2022-08-19 BST 19:20:04,979 - INFO -  epoch= 721      train_loss=  24.4050      val_loss=  44.7462      best=1      size=  46      nSHD_c=   2.8333      nSHD=   2.8333      tpr_c=   0.2174      change_adj_count=179      
+2022-08-19 BST 19:20:05,311 - INFO -  epoch= 722      train_loss=  23.9728      val_loss=  48.5791      best=1      size=  46      nSHD_c=   2.8333      nSHD=   2.8333      tpr_c=   0.2174      change_adj_count=179      
+2022-08-19 BST 19:20:09,587 - INFO -  epoch= 738      train_loss=  22.3487      val_loss=  42.9247      best=1      size=  46      nSHD_c=   2.8667      nSHD=   2.8333      tpr_c=   0.1957      change_adj_count=182      
+2022-08-19 BST 19:20:12,237 - INFO -  epoch= 748      train_loss=  21.8043      val_loss=  40.2277      best=1      size=  46      nSHD_c=   2.8333      nSHD=   2.7667      tpr_c=   0.1957      change_adj_count=187      
+2022-08-19 BST 19:20:17,814 - INFO -  epoch= 769      train_loss=  22.3211      val_loss=  39.2817      best=1      size=  45      nSHD_c=   2.8333      nSHD=   2.8000      tpr_c=   0.2000      change_adj_count=190      
+2022-08-19 BST 19:20:20,673 - INFO -  epoch= 780      train_loss=  20.4981      val_loss=  40.1739      best=1      size=  43      nSHD_c=   2.8000      nSHD=   2.7667      tpr_c=   0.2093      change_adj_count=197      
+2022-08-19 BST 19:20:23,388 - INFO -  epoch= 790      train_loss=  19.9971      val_loss=  38.6158      best=1      size=  44      nSHD_c=   2.8000      nSHD=   2.7667      tpr_c=   0.2045      change_adj_count=200      
+2022-08-19 BST 19:20:25,958 - INFO -  epoch= 800      train_loss=  20.2424      val_loss=  37.3414      best=1      size=  44      nSHD_c=   2.8000      nSHD=   2.7667      tpr_c=   0.2045      change_adj_count=203      
+2022-08-19 BST 19:20:26,292 - INFO -  epoch= 801      train_loss=  18.9328      val_loss=  36.8634      best=1      size=  44      nSHD_c=   2.8000      nSHD=   2.7667      tpr_c=   0.2045      change_adj_count=203      
+2022-08-19 BST 19:20:26,909 - INFO -  epoch= 803      train_loss=  20.6271      val_loss=  38.4340      best=1      size=  44      nSHD_c=   2.8000      nSHD=   2.7667      tpr_c=   0.2045      change_adj_count=203      
+2022-08-19 BST 19:20:27,558 - INFO -  epoch= 805      train_loss=  20.2599      val_loss=  36.2402      best=1      size=  44      nSHD_c=   2.8000      nSHD=   2.7667      tpr_c=   0.2045      change_adj_count=203      
+2022-08-19 BST 19:20:36,995 - INFO -  epoch= 840      train_loss=  18.4060      val_loss=  41.0774      best=1      size=  43      nSHD_c=   2.7333      nSHD=   2.7333      tpr_c=   0.2093      change_adj_count=210      
+2022-08-19 BST 19:20:41,102 - INFO -  epoch= 855      train_loss=  17.8869      val_loss=  36.8082      best=1      size=  43      nSHD_c=   2.7333      nSHD=   2.7333      tpr_c=   0.2093      change_adj_count=210      
+2022-08-19 BST 19:20:45,323 - INFO -  epoch= 871      train_loss=  16.9356      val_loss=  40.4999      best=1      size=  41      nSHD_c=   2.7333      nSHD=   2.7000      tpr_c=   0.1951      change_adj_count=211      
+2022-08-19 BST 19:20:50,034 - INFO -  epoch= 888      train_loss=  16.3599      val_loss=  44.0386      best=1      size=  41      nSHD_c=   2.6667      nSHD=   2.6333      tpr_c=   0.2195      change_adj_count=213      
+2022-08-19 BST 19:20:53,437 - INFO -  epoch= 900      train_loss=  17.0675      val_loss=  39.9439      best=1      size=  40      nSHD_c=   2.6667      nSHD=   2.6000      tpr_c=   0.2000      change_adj_count=214      
+2022-08-19 BST 19:20:54,537 - INFO -  epoch= 904      train_loss=  15.3774      val_loss=  41.1899      best=1      size=  40      nSHD_c=   2.6667      nSHD=   2.6000      tpr_c=   0.2000      change_adj_count=214      
+2022-08-19 BST 19:21:05,254 - INFO -  epoch= 945      train_loss=  15.6789      val_loss=  42.3702      best=1      size=  39      nSHD_c=   2.6667      nSHD=   2.6333      tpr_c=   0.2051      change_adj_count=217      
+2022-08-19 BST 19:21:06,799 - INFO -  epoch= 950      train_loss=  14.7767      val_loss=  42.6938      best=1      size=  39      nSHD_c=   2.6667      nSHD=   2.6333      tpr_c=   0.2051      change_adj_count=217      
+2022-08-19 BST 19:21:08,926 - INFO -  epoch= 958      train_loss=  14.5587      val_loss=  42.6768      best=1      size=  39      nSHD_c=   2.6667      nSHD=   2.6333      tpr_c=   0.2051      change_adj_count=217      
+2022-08-19 BST 19:21:09,700 - INFO -  epoch= 961      train_loss=  14.5609      val_loss=  43.6302      best=1      size=  39      nSHD_c=   2.6667      nSHD=   2.6333      tpr_c=   0.2051      change_adj_count=217      
+2022-08-19 BST 19:21:20,581 - INFO -  epoch=1000      train_loss=  12.5717      val_loss=  47.9533      best=1      size=  39      nSHD_c=   2.6667      nSHD=   2.6333      tpr_c=   0.2051      change_adj_count=220      
+2022-08-19 BST 19:21:20,582 - INFO - 
+
+DAG 4: size_true=48	X.var()=47.3993
+2022-08-19 BST 19:21:20,902 - INFO -  epoch=   1      train_loss=  44.1486      val_loss=  43.0276      best=1      size=  60      nSHD_c=   3.3000      nSHD=   3.3000      tpr_c=   0.0500      change_adj_count=5      
+2022-08-19 BST 19:21:21,207 - INFO -  epoch=   2      train_loss=  40.0656      val_loss=  34.3221      best=1      size=  59      nSHD_c=   3.2000      nSHD=   3.2000      tpr_c=   0.0847      change_adj_count=6      
+2022-08-19 BST 19:21:21,492 - INFO -  epoch=   3      train_loss=  37.8182      val_loss=  16.3036      best=1      size=  56      nSHD_c=   2.9333      nSHD=   2.9333      tpr_c=   0.1250      change_adj_count=7      
+2022-08-19 BST 19:21:47,211 - INFO -  epoch= 100      train_loss=  26.4947      val_loss= 241.5932      best=1      size=  57      nSHD_c=   2.5000      nSHD=   2.4667      tpr_c=   0.2456      change_adj_count=90      
+2022-08-19 BST 19:22:13,534 - INFO -  epoch= 200      train_loss=  22.0342      val_loss= 122.6625      best=1      size=  56      nSHD_c=   2.5000      nSHD=   2.4667      tpr_c=   0.2500      change_adj_count=135      
+2022-08-19 BST 19:22:39,705 - INFO -  epoch= 300      train_loss=  18.2457      val_loss=  77.9745      best=1      size=  56      nSHD_c=   2.4333      nSHD=   2.4000      tpr_c=   0.2679      change_adj_count=184      
+2022-08-19 BST 19:23:06,532 - INFO -  epoch= 400      train_loss=  15.7554      val_loss=  45.2233      best=1      size=  54      nSHD_c=   2.3333      nSHD=   2.3333      tpr_c=   0.2963      change_adj_count=224      
+2022-08-19 BST 19:23:32,961 - INFO -  epoch= 500      train_loss=  13.7289      val_loss=  33.6475      best=1      size=  51      nSHD_c=   2.2333      nSHD=   2.1667      tpr_c=   0.2941      change_adj_count=264      
+2022-08-19 BST 19:23:59,237 - INFO -  epoch= 600      train_loss=  11.7147      val_loss=  22.6571      best=1      size=  51      nSHD_c=   2.2667      nSHD=   2.1333      tpr_c=   0.2549      change_adj_count=290      
+2022-08-19 BST 19:24:25,568 - INFO -  epoch= 700      train_loss=  10.7474      val_loss=  19.4893      best=1      size=  49      nSHD_c=   2.2000      nSHD=   2.1000      tpr_c=   0.2857      change_adj_count=309      
+2022-08-19 BST 19:24:52,216 - INFO -  epoch= 800      train_loss=   9.8552      val_loss=  17.6009      best=1      size=  49      nSHD_c=   2.2000      nSHD=   2.0667      tpr_c=   0.2653      change_adj_count=327      
+2022-08-19 BST 19:25:18,740 - INFO -  epoch= 900      train_loss=   8.9895      val_loss=  17.3331      best=1      size=  51      nSHD_c=   2.2667      nSHD=   2.1333      tpr_c=   0.2549      change_adj_count=335      
+2022-08-19 BST 19:25:45,382 - INFO -  epoch=1000      train_loss=   8.3925      val_loss=  15.1046      best=1      size=  48      nSHD_c=   2.1667      nSHD=   2.0667      tpr_c=   0.2917      change_adj_count=352      
+2022-08-19 BST 19:25:45,383 - INFO - 
+
+DAG 5: size_true=57	X.var()=54.7286
+2022-08-19 BST 19:25:45,668 - INFO -  epoch=   1      train_loss=  54.1970      val_loss=  41.0913      best=1      size=  60      nSHD_c=   3.6333      nSHD=   3.6000      tpr_c=   0.0333      change_adj_count=5      
+2022-08-19 BST 19:25:46,104 - INFO -  epoch=   2      train_loss=  50.7405      val_loss=  27.1330      best=1      size=  57      nSHD_c=   3.5000      nSHD=   3.4667      tpr_c=   0.0526      change_adj_count=6      
+2022-08-19 BST 19:25:46,517 - INFO -  epoch=   3      train_loss=  48.1382      val_loss=  24.3066      best=1      size=  56      nSHD_c=   3.4000      nSHD=   3.3667      tpr_c=   0.0357      change_adj_count=7      
+2022-08-19 BST 19:26:11,698 - INFO -  epoch= 100      train_loss=  28.0336      val_loss= 182.4189      best=1      size=  57      nSHD_c=   2.7000      nSHD=   2.6000      tpr_c=   0.2456      change_adj_count=96      
+2022-08-19 BST 19:26:38,035 - INFO -  epoch= 200      train_loss=  19.6711      val_loss=  59.3445      best=1      size=  53      nSHD_c=   2.6667      nSHD=   2.5667      tpr_c=   0.2453      change_adj_count=156      
+2022-08-19 BST 19:27:04,534 - INFO -  epoch= 300      train_loss=  13.2970      val_loss=  23.9374      best=1      size=  53      nSHD_c=   2.6667      nSHD=   2.6000      tpr_c=   0.2642      change_adj_count=181      
+2022-08-19 BST 19:27:31,317 - INFO -  epoch= 400      train_loss=  10.5539      val_loss=  15.5726      best=1      size=  53      nSHD_c=   2.6667      nSHD=   2.5667      tpr_c=   0.2453      change_adj_count=207      
+2022-08-19 BST 19:27:43,003 - INFO -  epoch= 444      train_loss=   9.5169      val_loss=  10.9105      best=1      size=  53      nSHD_c=   2.5667      nSHD=   2.5000      tpr_c=   0.2830      change_adj_count=218      
+2022-08-19 BST 19:27:47,136 - INFO -  epoch= 459      train_loss=   8.9374      val_loss=  11.5658      best=1      size=  54      nSHD_c=   2.6667      nSHD=   2.5667      tpr_c=   0.2407      change_adj_count=222      
+2022-08-19 BST 19:27:50,828 - INFO -  epoch= 473      train_loss=   9.2475      val_loss=  11.5698      best=1      size=  52      nSHD_c=   2.6000      nSHD=   2.5000      tpr_c=   0.2500      change_adj_count=225      
+2022-08-19 BST 19:27:55,444 - INFO -  epoch= 490      train_loss=   8.5154      val_loss=  11.1599      best=1      size=  52      nSHD_c=   2.6000      nSHD=   2.5333      tpr_c=   0.2692      change_adj_count=227      
+2022-08-19 BST 19:27:55,726 - INFO -  epoch= 491      train_loss=   9.0774      val_loss=  10.8343      best=1      size=  52      nSHD_c=   2.6000      nSHD=   2.5333      tpr_c=   0.2692      change_adj_count=227      
+2022-08-19 BST 19:27:56,965 - INFO -  epoch= 495      train_loss=   8.5999      val_loss=   9.6900      best=1      size=  52      nSHD_c=   2.6000      nSHD=   2.5333      tpr_c=   0.2692      change_adj_count=227      
+2022-08-19 BST 19:27:58,399 - INFO -  epoch= 500      train_loss=   8.5983      val_loss=  11.6058      best=1      size=  52      nSHD_c=   2.6000      nSHD=   2.5333      tpr_c=   0.2692      change_adj_count=228      
+2022-08-19 BST 19:28:02,986 - INFO -  epoch= 517      train_loss=   8.3387      val_loss=  10.5324      best=1      size=  51      nSHD_c=   2.5667      nSHD=   2.5000      tpr_c=   0.2745      change_adj_count=232      
+2022-08-19 BST 19:28:03,496 - INFO -  epoch= 519      train_loss=   8.4172      val_loss=  10.2348      best=1      size=  51      nSHD_c=   2.5667      nSHD=   2.5000      tpr_c=   0.2745      change_adj_count=232      
+2022-08-19 BST 19:28:22,420 - INFO -  epoch= 591      train_loss=   7.8192      val_loss=  11.2166      best=1      size=  53      nSHD_c=   2.5667      nSHD=   2.5000      tpr_c=   0.2830      change_adj_count=244      
+2022-08-19 BST 19:28:23,010 - INFO -  epoch= 593      train_loss=   7.9029      val_loss=  11.7535      best=1      size=  52      nSHD_c=   2.5667      nSHD=   2.4667      tpr_c=   0.2692      change_adj_count=244      
+2022-08-19 BST 19:28:24,455 - INFO -  epoch= 598      train_loss=   7.3480      val_loss=  11.9446      best=1      size=  51      nSHD_c=   2.5333      nSHD=   2.4333      tpr_c=   0.2745      change_adj_count=245      
+2022-08-19 BST 19:28:25,072 - INFO -  epoch= 600      train_loss=   7.9212      val_loss=  11.8136      best=1      size=  52      nSHD_c=   2.5667      nSHD=   2.4667      tpr_c=   0.2692      change_adj_count=246      
+2022-08-19 BST 19:28:25,609 - INFO -  epoch= 602      train_loss=   7.5689      val_loss=  10.9469      best=1      size=  52      nSHD_c=   2.5667      nSHD=   2.4667      tpr_c=   0.2692      change_adj_count=246      
+2022-08-19 BST 19:28:27,159 - INFO -  epoch= 608      train_loss=   7.6192      val_loss=  11.0000      best=1      size=  52      nSHD_c=   2.5667      nSHD=   2.4667      tpr_c=   0.2692      change_adj_count=246      
+2022-08-19 BST 19:28:27,855 - INFO -  epoch= 610      train_loss=   7.3879      val_loss=  11.2150      best=1      size=  52      nSHD_c=   2.5667      nSHD=   2.4667      tpr_c=   0.2692      change_adj_count=246      
+2022-08-19 BST 19:28:45,240 - INFO -  epoch= 675      train_loss=   7.2759      val_loss=  10.8583      best=1      size=  51      nSHD_c=   2.5667      nSHD=   2.5000      tpr_c=   0.2745      change_adj_count=253      
+2022-08-19 BST 19:28:52,085 - INFO -  epoch= 700      train_loss=   6.6490      val_loss=  12.6481      best=1      size=  52      nSHD_c=   2.6000      nSHD=   2.5333      tpr_c=   0.2692      change_adj_count=255      
+2022-08-19 BST 19:29:01,000 - INFO -  epoch= 733      train_loss=   6.5417      val_loss=  11.6044      best=1      size=  51      nSHD_c=   2.5667      nSHD=   2.5000      tpr_c=   0.2745      change_adj_count=259      
+2022-08-19 BST 19:29:03,610 - INFO -  epoch= 743      train_loss=   6.5540      val_loss=  11.3733      best=1      size=  52      nSHD_c=   2.5000      nSHD=   2.4667      tpr_c=   0.3077      change_adj_count=260      
+2022-08-19 BST 19:29:17,257 - INFO -  epoch= 794      train_loss=   6.2259      val_loss=  11.1094      best=1      size=  50      nSHD_c=   2.4667      nSHD=   2.4000      tpr_c=   0.3000      change_adj_count=266      
+2022-08-19 BST 19:29:18,907 - INFO -  epoch= 800      train_loss=   6.2373      val_loss=  11.5286      best=1      size=  51      nSHD_c=   2.5000      nSHD=   2.4667      tpr_c=   0.2941      change_adj_count=269      
+2022-08-19 BST 19:29:21,449 - INFO -  epoch= 809      train_loss=   6.5022      val_loss=  11.1185      best=1      size=  50      nSHD_c=   2.4667      nSHD=   2.4000      tpr_c=   0.3000      change_adj_count=270      
+2022-08-19 BST 19:29:22,008 - INFO -  epoch= 811      train_loss=   6.1617      val_loss=  11.3006      best=1      size=  50      nSHD_c=   2.4667      nSHD=   2.4000      tpr_c=   0.3000      change_adj_count=270      
+2022-08-19 BST 19:29:23,589 - INFO -  epoch= 817      train_loss=   6.1549      val_loss=  10.8840      best=1      size=  50      nSHD_c=   2.4667      nSHD=   2.4000      tpr_c=   0.3000      change_adj_count=270      
+2022-08-19 BST 19:29:37,111 - INFO -  epoch= 868      train_loss=   5.9819      val_loss=  11.3206      best=1      size=  50      nSHD_c=   2.4667      nSHD=   2.4333      tpr_c=   0.3000      change_adj_count=275      
+2022-08-19 BST 19:29:39,631 - INFO -  epoch= 877      train_loss=   5.7474      val_loss=  10.2212      best=1      size=  50      nSHD_c=   2.4667      nSHD=   2.4333      tpr_c=   0.3000      change_adj_count=278      
+2022-08-19 BST 19:29:45,783 - INFO -  epoch= 900      train_loss=   5.8813      val_loss=  11.5198      best=1      size=  49      nSHD_c=   2.5000      nSHD=   2.4333      tpr_c=   0.2653      change_adj_count=280      
+2022-08-19 BST 19:29:53,376 - INFO -  epoch= 928      train_loss=   5.7664      val_loss=   9.8749      best=1      size=  49      nSHD_c=   2.4333      nSHD=   2.3667      tpr_c=   0.2857      change_adj_count=286      
+2022-08-19 BST 19:30:10,101 - INFO -  epoch= 992      train_loss=   5.5701      val_loss=  10.8797      best=1      size=  50      nSHD_c=   2.4667      nSHD=   2.4000      tpr_c=   0.2800      change_adj_count=298      
+2022-08-19 BST 19:30:12,260 - INFO -  epoch=1000      train_loss=   5.3927      val_loss=  10.0573      best=1      size=  50      nSHD_c=   2.4667      nSHD=   2.4000      tpr_c=   0.2800      change_adj_count=298      
+2022-08-19 BST 19:30:12,261 - INFO - 
+
+DAG 6: size_true=64	X.var()=29.7229
+2022-08-19 BST 19:30:12,543 - INFO -  epoch=   1      train_loss=  27.2396      val_loss=  27.0362      best=1      size=  54      nSHD_c=   3.5000      nSHD=   3.4333      tpr_c=   0.0556      change_adj_count=5      
+2022-08-19 BST 19:30:12,818 - INFO -  epoch=   2      train_loss=  24.2097      val_loss=  21.8885      best=1      size=  55      nSHD_c=   3.5667      nSHD=   3.5000      tpr_c=   0.0364      change_adj_count=6      
+2022-08-19 BST 19:30:13,092 - INFO -  epoch=   3      train_loss=  22.9532      val_loss=  17.5441      best=1      size=  58      nSHD_c=   3.5000      nSHD=   3.5000      tpr_c=   0.1034      change_adj_count=7      
+2022-08-19 BST 19:30:38,758 - INFO -  epoch= 100      train_loss=  19.2870      val_loss=  96.5359      best=1      size=  59      nSHD_c=   3.1000      nSHD=   3.0333      tpr_c=   0.2203      change_adj_count=95      
+2022-08-19 BST 19:31:04,979 - INFO -  epoch= 200      train_loss=  18.1068      val_loss=  82.0895      best=1      size=  56      nSHD_c=   2.9667      nSHD=   2.9333      tpr_c=   0.2500      change_adj_count=136      
+2022-08-19 BST 19:31:31,568 - INFO -  epoch= 300      train_loss=  16.3962      val_loss=  60.4360      best=1      size=  55      nSHD_c=   2.9667      nSHD=   2.9000      tpr_c=   0.2364      change_adj_count=181      
+2022-08-19 BST 19:31:58,131 - INFO -  epoch= 400      train_loss=  15.0917      val_loss=  41.7085      best=1      size=  55      nSHD_c=   3.0000      nSHD=   2.9000      tpr_c=   0.2182      change_adj_count=203      
+2022-08-19 BST 19:32:24,455 - INFO -  epoch= 500      train_loss=  13.8941      val_loss=  32.0575      best=1      size=  54      nSHD_c=   2.9667      nSHD=   2.8667      tpr_c=   0.2222      change_adj_count=235      
+2022-08-19 BST 19:32:50,922 - INFO -  epoch= 600      train_loss=  12.7599      val_loss=  28.2717      best=1      size=  53      nSHD_c=   2.8333      nSHD=   2.7333      tpr_c=   0.2642      change_adj_count=257      
+2022-08-19 BST 19:33:17,156 - INFO -  epoch= 700      train_loss=  11.9556      val_loss=  23.6922      best=1      size=  53      nSHD_c=   2.8000      nSHD=   2.6667      tpr_c=   0.2642      change_adj_count=273      
+2022-08-19 BST 19:33:43,574 - INFO -  epoch= 800      train_loss=  11.0556      val_loss=  20.5342      best=1      size=  54      nSHD_c=   2.7667      nSHD=   2.7000      tpr_c=   0.2963      change_adj_count=282      
+2022-08-19 BST 19:34:10,325 - INFO -  epoch= 900      train_loss=   9.9766      val_loss=  17.5265      best=1      size=  53      nSHD_c=   2.7000      nSHD=   2.6667      tpr_c=   0.3208      change_adj_count=305      
+2022-08-19 BST 19:34:37,139 - INFO -  epoch=1000      train_loss=   9.6343      val_loss=  16.5457      best=1      size=  53      nSHD_c=   2.7333      nSHD=   2.6333      tpr_c=   0.3019      change_adj_count=320      
+2022-08-19 BST 19:34:37,140 - INFO - 
+
+DAG 7: size_true=62	X.var()=55.6800
+2022-08-19 BST 19:34:37,433 - INFO -  epoch=   1      train_loss=  50.0421      val_loss=  41.4087      best=1      size=  60      nSHD_c=   3.9667      nSHD=   3.9333      tpr_c=   0.0000      change_adj_count=5      
+2022-08-19 BST 19:34:37,728 - INFO -  epoch=   2      train_loss=  42.4099      val_loss=  36.2021      best=1      size=  59      nSHD_c=   3.9000      nSHD=   3.9000      tpr_c=   0.0000      change_adj_count=6      
+2022-08-19 BST 19:35:03,441 - INFO -  epoch= 100      train_loss=  25.6861      val_loss= 495.6366      best=1      size=  51      nSHD_c=   3.3667      nSHD=   3.3667      tpr_c=   0.0980      change_adj_count=95      
+2022-08-19 BST 19:35:29,708 - INFO -  epoch= 200      train_loss=  23.2227      val_loss= 280.4543      best=1      size=  52      nSHD_c=   3.2667      nSHD=   3.2667      tpr_c=   0.1346      change_adj_count=157      
+2022-08-19 BST 19:35:56,314 - INFO -  epoch= 300      train_loss=  19.5057      val_loss= 183.0945      best=1      size=  50      nSHD_c=   3.2000      nSHD=   3.2000      tpr_c=   0.1400      change_adj_count=184      
+2022-08-19 BST 19:36:22,996 - INFO -  epoch= 400      train_loss=  17.5366      val_loss= 118.4804      best=1      size=  51      nSHD_c=   3.2333      nSHD=   3.2333      tpr_c=   0.1373      change_adj_count=209      
+2022-08-19 BST 19:36:49,026 - INFO -  epoch= 500      train_loss=  15.9093      val_loss=  65.5006      best=1      size=  49      nSHD_c=   3.1333      nSHD=   3.1333      tpr_c=   0.1633      change_adj_count=232      
+2022-08-19 BST 19:37:15,535 - INFO -  epoch= 600      train_loss=  14.3361      val_loss=  48.4417      best=1      size=  49      nSHD_c=   3.1000      nSHD=   3.0667      tpr_c=   0.1633      change_adj_count=255      
+2022-08-19 BST 19:37:42,161 - INFO -  epoch= 700      train_loss=  12.8955      val_loss=  33.9490      best=1      size=  47      nSHD_c=   3.0333      nSHD=   3.0333      tpr_c=   0.1702      change_adj_count=284      
+2022-08-19 BST 19:38:08,597 - INFO -  epoch= 800      train_loss=  11.5158      val_loss=  23.3565      best=1      size=  47      nSHD_c=   3.0000      nSHD=   2.9667      tpr_c=   0.1702      change_adj_count=303      
+2022-08-19 BST 19:38:35,230 - INFO -  epoch= 900      train_loss=  10.6855      val_loss=  17.2155      best=1      size=  46      nSHD_c=   2.9667      nSHD=   2.9333      tpr_c=   0.1739      change_adj_count=335      
+2022-08-19 BST 19:39:01,436 - INFO -  epoch=1000      train_loss=   9.6372      val_loss=  13.1670      best=1      size=  45      nSHD_c=   2.8333      nSHD=   2.7667      tpr_c=   0.2000      change_adj_count=346      
+2022-08-19 BST 19:39:01,437 - INFO - 
+
+DAG 8: size_true=63	X.var()=39.3378
+2022-08-19 BST 19:39:01,864 - INFO -  epoch=   1      train_loss=  37.0631      val_loss=  30.7895      best=1      size=  55      nSHD_c=   3.5667      nSHD=   3.5333      tpr_c=   0.0364      change_adj_count=5      
+2022-08-19 BST 19:39:02,212 - INFO -  epoch=   2      train_loss=  33.8405      val_loss=  25.8739      best=1      size=  55      nSHD_c=   3.4667      nSHD=   3.4333      tpr_c=   0.0727      change_adj_count=6      
+2022-08-19 BST 19:39:02,567 - INFO -  epoch=   3      train_loss=  32.3669      val_loss=  19.9687      best=1      size=  56      nSHD_c=   3.3333      nSHD=   3.3000      tpr_c=   0.1071      change_adj_count=7      
+2022-08-19 BST 19:39:02,907 - INFO -  epoch=   4      train_loss=  30.9023      val_loss=  21.2670      best=1      size=  55      nSHD_c=   3.3667      nSHD=   3.3333      tpr_c=   0.1091      change_adj_count=8      
+2022-08-19 BST 19:39:28,378 - INFO -  epoch= 100      train_loss=  23.7241      val_loss= 147.4234      best=1      size=  55      nSHD_c=   2.8667      nSHD=   2.7667      tpr_c=   0.2545      change_adj_count=99      
+2022-08-19 BST 19:39:54,678 - INFO -  epoch= 200      train_loss=  20.1859      val_loss= 112.2151      best=1      size=  59      nSHD_c=   2.9333      nSHD=   2.8667      tpr_c=   0.2712      change_adj_count=139      
+2022-08-19 BST 19:40:19,626 - INFO -  epoch= 300      train_loss=  17.6734      val_loss=  64.0435      best=1      size=  60      nSHD_c=   3.0333      nSHD=   2.9667      tpr_c=   0.2500      change_adj_count=158      
+2022-08-19 BST 19:40:44,678 - INFO -  epoch= 400      train_loss=  15.3444      val_loss=  39.6845      best=1      size=  57      nSHD_c=   2.9667      nSHD=   2.8667      tpr_c=   0.2456      change_adj_count=195      
+2022-08-19 BST 19:41:09,460 - INFO -  epoch= 500      train_loss=  12.8713      val_loss=  27.0426      best=1      size=  57      nSHD_c=   2.9000      nSHD=   2.8000      tpr_c=   0.2632      change_adj_count=216      
+2022-08-19 BST 19:41:34,477 - INFO -  epoch= 600      train_loss=  11.0287      val_loss=  18.8272      best=1      size=  55      nSHD_c=   2.8333      nSHD=   2.7333      tpr_c=   0.2727      change_adj_count=233      
+2022-08-19 BST 19:41:59,437 - INFO -  epoch= 700      train_loss=  10.1015      val_loss=  14.1397      best=1      size=  57      nSHD_c=   2.7333      nSHD=   2.6667      tpr_c=   0.3158      change_adj_count=248      
+2022-08-19 BST 19:42:24,046 - INFO -  epoch= 800      train_loss=   9.0279      val_loss=  14.5288      best=1      size=  55      nSHD_c=   2.7333      nSHD=   2.6667      tpr_c=   0.3091      change_adj_count=252      
+2022-08-19 BST 19:42:38,719 - INFO -  epoch= 859      train_loss=   8.8495      val_loss=  11.8619      best=1      size=  55      nSHD_c=   2.6667      nSHD=   2.6000      tpr_c=   0.3273      change_adj_count=254      
+2022-08-19 BST 19:42:42,837 - INFO -  epoch= 875      train_loss=   8.4327      val_loss=  11.4025      best=1      size=  55      nSHD_c=   2.6000      nSHD=   2.5333      tpr_c=   0.3455      change_adj_count=255      
+2022-08-19 BST 19:42:48,909 - INFO -  epoch= 899      train_loss=   8.2293      val_loss=  10.7247      best=1      size=  55      nSHD_c=   2.6000      nSHD=   2.5333      tpr_c=   0.3455      change_adj_count=260      
+2022-08-19 BST 19:42:49,172 - INFO -  epoch= 900      train_loss=   8.3238      val_loss=  11.5861      best=1      size=  55      nSHD_c=   2.6000      nSHD=   2.5333      tpr_c=   0.3455      change_adj_count=260      
+2022-08-19 BST 19:43:01,319 - INFO -  epoch= 948      train_loss=   8.0713      val_loss=  10.8733      best=1      size=  55      nSHD_c=   2.5667      nSHD=   2.4667      tpr_c=   0.3455      change_adj_count=268      
+2022-08-19 BST 19:43:07,942 - INFO -  epoch= 975      train_loss=   7.8039      val_loss=  11.5118      best=1      size=  53      nSHD_c=   2.6333      nSHD=   2.5333      tpr_c=   0.3208      change_adj_count=274      
+2022-08-19 BST 19:43:14,433 - INFO -  epoch=1000      train_loss=   7.6005      val_loss=  11.5786      best=1      size=  53      nSHD_c=   2.6667      nSHD=   2.5333      tpr_c=   0.3019      change_adj_count=275      
+2022-08-19 BST 19:43:14,434 - INFO - 
+
+DAG 9: size_true=61	X.var()=94.6254
+2022-08-19 BST 19:43:14,724 - INFO -  epoch=   1      train_loss=  83.3746      val_loss=  80.1724      best=1      size=  56      nSHD_c=   3.5333      nSHD=   3.4667      tpr_c=   0.0536      change_adj_count=5      
+2022-08-19 BST 19:43:15,006 - INFO -  epoch=   2      train_loss=  71.6011      val_loss=  49.8552      best=1      size=  53      nSHD_c=   3.4000      nSHD=   3.3667      tpr_c=   0.0755      change_adj_count=6      
+2022-08-19 BST 19:43:39,039 - INFO -  epoch= 100      train_loss=  46.3161      val_loss= 658.1547      best=1      size=  56      nSHD_c=   3.2333      nSHD=   3.2000      tpr_c=   0.1607      change_adj_count=87      
+2022-08-19 BST 19:44:03,856 - INFO -  epoch= 200      train_loss=  37.0760      val_loss= 308.9750      best=1      size=  56      nSHD_c=   3.1333      nSHD=   3.1333      tpr_c=   0.1964      change_adj_count=123      
+2022-08-19 BST 19:44:28,989 - INFO -  epoch= 300      train_loss=  29.8181      val_loss= 153.3576      best=1      size=  54      nSHD_c=   3.1000      nSHD=   3.0667      tpr_c=   0.1852      change_adj_count=175      
+2022-08-19 BST 19:44:54,016 - INFO -  epoch= 400      train_loss=  24.6667      val_loss=  71.8921      best=1      size=  53      nSHD_c=   3.0667      nSHD=   3.0333      tpr_c=   0.1887      change_adj_count=195      
+2022-08-19 BST 19:45:19,290 - INFO -  epoch= 500      train_loss=  20.6443      val_loss=  35.8188      best=1      size=  51      nSHD_c=   2.8667      nSHD=   2.8000      tpr_c=   0.2353      change_adj_count=225      
+2022-08-19 BST 19:45:27,045 - INFO -  epoch= 532      train_loss=  19.3332      val_loss=  30.3536      best=1      size=  52      nSHD_c=   2.9667      nSHD=   2.8333      tpr_c=   0.1923      change_adj_count=237      
+2022-08-19 BST 19:45:35,375 - INFO -  epoch= 565      train_loss=  17.7069      val_loss=  28.5721      best=1      size=  51      nSHD_c=   2.9333      nSHD=   2.8000      tpr_c=   0.1961      change_adj_count=251      
+2022-08-19 BST 19:45:36,162 - INFO -  epoch= 568      train_loss=  18.5405      val_loss=  24.1571      best=1      size=  50      nSHD_c=   2.8000      nSHD=   2.7000      tpr_c=   0.2400      change_adj_count=253      
+2022-08-19 BST 19:45:37,258 - INFO -  epoch= 572      train_loss=  18.0917      val_loss=  24.8244      best=1      size=  50      nSHD_c=   2.8000      nSHD=   2.7000      tpr_c=   0.2400      change_adj_count=253      
+2022-08-19 BST 19:45:40,016 - INFO -  epoch= 584      train_loss=  17.5400      val_loss=  20.6700      best=1      size=  51      nSHD_c=   2.8000      nSHD=   2.6667      tpr_c=   0.2353      change_adj_count=260      
+2022-08-19 BST 19:45:40,544 - INFO -  epoch= 586      train_loss=  17.2278      val_loss=  22.5009      best=1      size=  52      nSHD_c=   2.8333      nSHD=   2.7000      tpr_c=   0.2308      change_adj_count=261      
+2022-08-19 BST 19:45:43,645 - INFO -  epoch= 598      train_loss=  17.2668      val_loss=  20.7064      best=1      size=  52      nSHD_c=   2.8333      nSHD=   2.7000      tpr_c=   0.2308      change_adj_count=265      
+2022-08-19 BST 19:45:44,141 - INFO -  epoch= 600      train_loss=  17.3745      val_loss=  24.7709      best=1      size=  52      nSHD_c=   2.8333      nSHD=   2.7000      tpr_c=   0.2308      change_adj_count=265      
+2022-08-19 BST 19:45:45,756 - INFO -  epoch= 606      train_loss=  17.1230      val_loss=  21.4237      best=1      size=  52      nSHD_c=   2.8333      nSHD=   2.7000      tpr_c=   0.2308      change_adj_count=265      
+2022-08-19 BST 19:45:46,402 - INFO -  epoch= 608      train_loss=  16.3970      val_loss=  20.9003      best=1      size=  52      nSHD_c=   2.8333      nSHD=   2.7000      tpr_c=   0.2308      change_adj_count=265      
+2022-08-19 BST 19:46:01,641 - INFO -  epoch= 669      train_loss=  14.6867      val_loss=  13.5518      best=1      size=  50      nSHD_c=   2.7667      nSHD=   2.6667      tpr_c=   0.2400      change_adj_count=279      
+2022-08-19 BST 19:46:02,901 - INFO -  epoch= 673      train_loss=  14.5768      val_loss=  13.7088      best=1      size=  50      nSHD_c=   2.7667      nSHD=   2.6667      tpr_c=   0.2400      change_adj_count=279      
+2022-08-19 BST 19:46:09,784 - INFO -  epoch= 700      train_loss=  14.0514      val_loss=  12.9302      best=1      size=  49      nSHD_c=   2.6667      nSHD=   2.6333      tpr_c=   0.2857      change_adj_count=282      
+2022-08-19 BST 19:46:17,822 - INFO -  epoch= 732      train_loss=  13.8809      val_loss=  12.2931      best=1      size=  48      nSHD_c=   2.7000      nSHD=   2.6000      tpr_c=   0.2500      change_adj_count=290      
+2022-08-19 BST 19:46:24,209 - INFO -  epoch= 759      train_loss=  12.8536      val_loss=  12.3167      best=1      size=  45      nSHD_c=   2.6000      nSHD=   2.5000      tpr_c=   0.2667      change_adj_count=294      
+2022-08-19 BST 19:46:31,651 - INFO -  epoch= 789      train_loss=  12.7629      val_loss=  10.9239      best=1      size=  46      nSHD_c=   2.6333      nSHD=   2.5333      tpr_c=   0.2609      change_adj_count=302      
+2022-08-19 BST 19:46:31,922 - INFO -  epoch= 790      train_loss=  12.5305      val_loss=  10.8211      best=1      size=  46      nSHD_c=   2.6333      nSHD=   2.5333      tpr_c=   0.2609      change_adj_count=302      
+2022-08-19 BST 19:46:34,074 - INFO -  epoch= 798      train_loss=  12.0477      val_loss=  10.6320      best=1      size=  45      nSHD_c=   2.6000      nSHD=   2.5000      tpr_c=   0.2667      change_adj_count=306      
+2022-08-19 BST 19:46:34,608 - INFO -  epoch= 800      train_loss=  12.3422      val_loss=  11.5634      best=1      size=  45      nSHD_c=   2.6000      nSHD=   2.5000      tpr_c=   0.2667      change_adj_count=306      
+2022-08-19 BST 19:46:49,914 - INFO -  epoch= 862      train_loss=  11.6394      val_loss=  11.9266      best=1      size=  45      nSHD_c=   2.6000      nSHD=   2.5000      tpr_c=   0.2667      change_adj_count=314      
+2022-08-19 BST 19:46:59,293 - INFO -  epoch= 898      train_loss=  10.9939      val_loss=  14.0796      best=1      size=  45      nSHD_c=   2.6000      nSHD=   2.5000      tpr_c=   0.2667      change_adj_count=320      
+2022-08-19 BST 19:46:59,978 - INFO -  epoch= 900      train_loss=  10.9365      val_loss=  13.7518      best=1      size=  45      nSHD_c=   2.6000      nSHD=   2.5000      tpr_c=   0.2667      change_adj_count=320      
+2022-08-19 BST 19:47:08,048 - INFO -  epoch= 932      train_loss=  10.6403      val_loss=  13.1141      best=1      size=  44      nSHD_c=   2.6333      nSHD=   2.5333      tpr_c=   0.2500      change_adj_count=325      
+2022-08-19 BST 19:47:10,439 - INFO -  epoch= 941      train_loss=  10.5136      val_loss=  13.8789      best=1      size=  45      nSHD_c=   2.6000      nSHD=   2.5000      tpr_c=   0.2667      change_adj_count=328      
+2022-08-19 BST 19:47:17,668 - INFO -  epoch= 969      train_loss=   9.7930      val_loss=  15.3604      best=1      size=  43      nSHD_c=   2.5333      nSHD=   2.4333      tpr_c=   0.2791      change_adj_count=335      
+2022-08-19 BST 19:47:19,031 - INFO -  epoch= 974      train_loss=   9.9451      val_loss=  15.3477      best=1      size=  43      nSHD_c=   2.5333      nSHD=   2.4333      tpr_c=   0.2791      change_adj_count=337      
+2022-08-19 BST 19:47:25,404 - INFO -  epoch=1000      train_loss=  10.1885      val_loss=  18.8430      best=1      size=  43      nSHD_c=   2.6000      nSHD=   2.5000      tpr_c=   0.2558      change_adj_count=348      
+2022-08-19 BST 19:47:25,405 - INFO - 
+
+DAG 10: size_true=51	X.var()=18.9170
+2022-08-19 BST 19:47:25,851 - INFO -  epoch=   1      train_loss=  17.8194      val_loss=  17.1794      best=1      size=  59      nSHD_c=   3.3667      nSHD=   3.3667      tpr_c=   0.0508      change_adj_count=5      
+2022-08-19 BST 19:47:26,147 - INFO -  epoch=   2      train_loss=  16.2986      val_loss=  14.8795      best=1      size=  56      nSHD_c=   3.2333      nSHD=   3.2000      tpr_c=   0.0357      change_adj_count=6      
+2022-08-19 BST 19:47:26,442 - INFO -  epoch=   3      train_loss=  15.6015      val_loss=  13.3697      best=1      size=  55      nSHD_c=   3.1667      nSHD=   3.1667      tpr_c=   0.0545      change_adj_count=7      
+2022-08-19 BST 19:47:26,732 - INFO -  epoch=   4      train_loss=  15.0315      val_loss=  11.6547      best=1      size=  59      nSHD_c=   3.2667      nSHD=   3.2667      tpr_c=   0.0678      change_adj_count=8      
+2022-08-19 BST 19:47:27,045 - INFO -  epoch=   5      train_loss=  14.8209      val_loss=  11.3843      best=1      size=  54      nSHD_c=   2.9667      nSHD=   2.9667      tpr_c=   0.1111      change_adj_count=9      
+2022-08-19 BST 19:47:50,650 - INFO -  epoch= 100      train_loss=  13.4676      val_loss=  59.2824      best=1      size=  54      nSHD_c=   2.4667      nSHD=   2.4333      tpr_c=   0.2593      change_adj_count=95      
+2022-08-19 BST 19:48:15,872 - INFO -  epoch= 200      train_loss=  12.4845      val_loss=  53.8600      best=1      size=  52      nSHD_c=   2.3667      nSHD=   2.3333      tpr_c=   0.2885      change_adj_count=149      
+2022-08-19 BST 19:48:41,181 - INFO -  epoch= 300      train_loss=  11.3469      val_loss=  41.9205      best=1      size=  50      nSHD_c=   2.4667      nSHD=   2.4000      tpr_c=   0.2400      change_adj_count=197      
+2022-08-19 BST 19:49:06,130 - INFO -  epoch= 400      train_loss=  10.1303      val_loss=  30.2575      best=1      size=  51      nSHD_c=   2.4667      nSHD=   2.4000      tpr_c=   0.2353      change_adj_count=229      
+2022-08-19 BST 19:49:31,228 - INFO -  epoch= 500      train_loss=   9.3841      val_loss=  23.8854      best=1      size=  51      nSHD_c=   2.4000      nSHD=   2.3000      tpr_c=   0.2353      change_adj_count=263      
+2022-08-19 BST 19:49:56,689 - INFO -  epoch= 600      train_loss=   8.6127      val_loss=  16.1584      best=1      size=  52      nSHD_c=   2.3667      nSHD=   2.2667      tpr_c=   0.2500      change_adj_count=286      
+2022-08-19 BST 19:50:22,915 - INFO -  epoch= 700      train_loss=   7.9909      val_loss=  14.4649      best=1      size=  51      nSHD_c=   2.2667      nSHD=   2.2000      tpr_c=   0.2941      change_adj_count=299      
+2022-08-19 BST 19:50:49,147 - INFO -  epoch= 800      train_loss=   7.5360      val_loss=  12.7031      best=1      size=  51      nSHD_c=   2.3000      nSHD=   2.2000      tpr_c=   0.2745      change_adj_count=314      
+2022-08-19 BST 19:51:15,450 - INFO -  epoch= 900      train_loss=   7.0214      val_loss=   9.8633      best=1      size=  50      nSHD_c=   2.2333      nSHD=   2.1667      tpr_c=   0.3000      change_adj_count=327      
+2022-08-19 BST 19:51:41,697 - INFO -  epoch=1000      train_loss=   6.5003      val_loss=   9.8848      best=1      size=  51      nSHD_c=   2.3667      nSHD=   2.2667      tpr_c=   0.2549      change_adj_count=336      
+2022-08-19 BST 19:51:41,698 - INFO - 
+
+DAG 11: size_true=68	X.var()=127.5135
+2022-08-19 BST 19:51:41,985 - INFO -  epoch=   1      train_loss= 119.7674      val_loss= 100.0414      best=1      size=  55      nSHD_c=   3.6667      nSHD=   3.6667      tpr_c=   0.0909      change_adj_count=5      
+2022-08-19 BST 19:51:42,277 - INFO -  epoch=   2      train_loss= 105.8670      val_loss=  60.1650      best=1      size=  56      nSHD_c=   3.6333      nSHD=   3.6333      tpr_c=   0.1071      change_adj_count=6      
+2022-08-19 BST 19:52:07,867 - INFO -  epoch= 100      train_loss=  51.9139      val_loss= 718.7904      best=1      size=  59      nSHD_c=   3.3333      nSHD=   3.3000      tpr_c=   0.2203      change_adj_count=68      
+2022-08-19 BST 19:52:34,008 - INFO -  epoch= 200      train_loss=  40.0749      val_loss= 296.8828      best=1      size=  58      nSHD_c=   3.3333      nSHD=   3.3333      tpr_c=   0.2241      change_adj_count=112      
+2022-08-19 BST 19:52:59,853 - INFO -  epoch= 300      train_loss=  31.2762      val_loss= 134.4458      best=1      size=  57      nSHD_c=   3.2667      nSHD=   3.2333      tpr_c=   0.2281      change_adj_count=141      
+2022-08-19 BST 19:53:26,550 - INFO -  epoch= 400      train_loss=  25.2263      val_loss=  62.4488      best=1      size=  55      nSHD_c=   3.1000      nSHD=   3.1000      tpr_c=   0.2727      change_adj_count=172      
+2022-08-19 BST 19:53:52,641 - INFO -  epoch= 500      train_loss=  20.5562      val_loss=  32.0590      best=1      size=  54      nSHD_c=   2.9333      nSHD=   2.8667      tpr_c=   0.2963      change_adj_count=186      
+2022-08-19 BST 19:54:19,005 - INFO -  epoch= 600      train_loss=  17.2718      val_loss=  26.2604      best=1      size=  54      nSHD_c=   2.7667      nSHD=   2.7333      tpr_c=   0.3519      change_adj_count=200      
+2022-08-19 BST 19:54:44,470 - INFO -  epoch= 696      train_loss=  15.3368      val_loss=  24.3132      best=1      size=  53      nSHD_c=   2.8000      nSHD=   2.7667      tpr_c=   0.3396      change_adj_count=216      
+2022-08-19 BST 19:54:45,463 - INFO -  epoch= 700      train_loss=  15.3257      val_loss=  25.4286      best=1      size=  53      nSHD_c=   2.8000      nSHD=   2.7667      tpr_c=   0.3396      change_adj_count=216      
+2022-08-19 BST 19:54:49,759 - INFO -  epoch= 716      train_loss=  14.9956      val_loss=  25.4733      best=1      size=  53      nSHD_c=   2.8000      nSHD=   2.7667      tpr_c=   0.3396      change_adj_count=216      
+2022-08-19 BST 19:54:53,566 - INFO -  epoch= 730      train_loss=  14.2630      val_loss=  26.3264      best=1      size=  53      nSHD_c=   2.8000      nSHD=   2.7667      tpr_c=   0.3396      change_adj_count=216      
+2022-08-19 BST 19:54:53,841 - INFO -  epoch= 731      train_loss=  13.9580      val_loss=  25.1252      best=1      size=  53      nSHD_c=   2.8000      nSHD=   2.7667      tpr_c=   0.3396      change_adj_count=216      
+2022-08-19 BST 19:54:55,741 - INFO -  epoch= 738      train_loss=  14.4834      val_loss=  25.3654      best=1      size=  53      nSHD_c=   2.8000      nSHD=   2.7667      tpr_c=   0.3396      change_adj_count=216      
+2022-08-19 BST 19:54:56,839 - INFO -  epoch= 742      train_loss=  13.9287      val_loss=  25.7025      best=1      size=  53      nSHD_c=   2.8000      nSHD=   2.7667      tpr_c=   0.3396      change_adj_count=216      
+2022-08-19 BST 19:55:02,094 - INFO -  epoch= 762      train_loss=  13.7376      val_loss=  27.2533      best=1      size=  53      nSHD_c=   2.7333      nSHD=   2.7000      tpr_c=   0.3585      change_adj_count=218      
+2022-08-19 BST 19:55:09,341 - INFO -  epoch= 773      train_loss=  13.4662      val_loss=  27.2946      best=1      size=  53      nSHD_c=   2.7333      nSHD=   2.7000      tpr_c=   0.3585      change_adj_count=218      
+2022-08-19 BST 19:55:14,026 - INFO -  epoch= 790      train_loss=  13.6084      val_loss=  28.1494      best=1      size=  53      nSHD_c=   2.7333      nSHD=   2.7000      tpr_c=   0.3585      change_adj_count=218      
+2022-08-19 BST 19:55:14,639 - INFO -  epoch= 792      train_loss=  12.9238      val_loss=  26.8879      best=1      size=  53      nSHD_c=   2.7333      nSHD=   2.7000      tpr_c=   0.3585      change_adj_count=218      
+2022-08-19 BST 19:55:15,706 - INFO -  epoch= 796      train_loss=  13.2444      val_loss=  28.1536      best=1      size=  53      nSHD_c=   2.8000      nSHD=   2.7667      tpr_c=   0.3396      change_adj_count=219      
+2022-08-19 BST 19:55:16,675 - INFO -  epoch= 800      train_loss=  13.0777      val_loss=  31.1348      best=1      size=  53      nSHD_c=   2.8000      nSHD=   2.7667      tpr_c=   0.3396      change_adj_count=219      
+2022-08-19 BST 19:55:18,705 - INFO -  epoch= 807      train_loss=  12.8757      val_loss=  26.3262      best=1      size=  53      nSHD_c=   2.8000      nSHD=   2.7667      tpr_c=   0.3396      change_adj_count=219      
+2022-08-19 BST 19:55:22,397 - INFO -  epoch= 821      train_loss=  12.9278      val_loss=  25.8888      best=1      size=  53      nSHD_c=   2.8000      nSHD=   2.7667      tpr_c=   0.3396      change_adj_count=221      
+2022-08-19 BST 19:55:26,772 - INFO -  epoch= 837      train_loss=  12.8954      val_loss=  25.8831      best=1      size=  53      nSHD_c=   2.7333      nSHD=   2.7000      tpr_c=   0.3585      change_adj_count=224      
+2022-08-19 BST 19:55:27,873 - INFO -  epoch= 841      train_loss=  12.5541      val_loss=  26.3268      best=1      size=  53      nSHD_c=   2.7333      nSHD=   2.7000      tpr_c=   0.3585      change_adj_count=224      
+2022-08-19 BST 19:55:31,323 - INFO -  epoch= 854      train_loss=  12.0991      val_loss=  27.7026      best=1      size=  53      nSHD_c=   2.7333      nSHD=   2.7000      tpr_c=   0.3585      change_adj_count=226      
+2022-08-19 BST 19:55:38,948 - INFO -  epoch= 883      train_loss=  12.2593      val_loss=  28.2813      best=1      size=  53      nSHD_c=   2.7333      nSHD=   2.7000      tpr_c=   0.3585      change_adj_count=227      
+2022-08-19 BST 19:55:39,869 - INFO -  epoch= 886      train_loss=  12.3748      val_loss=  27.5972      best=1      size=  53      nSHD_c=   2.7333      nSHD=   2.7000      tpr_c=   0.3585      change_adj_count=227      
+2022-08-19 BST 19:55:41,667 - INFO -  epoch= 892      train_loss=  12.1625      val_loss=  26.8634      best=1      size=  53      nSHD_c=   2.7333      nSHD=   2.7000      tpr_c=   0.3585      change_adj_count=227      
+2022-08-19 BST 19:55:43,669 - INFO -  epoch= 900      train_loss=  12.1257      val_loss=  26.5613      best=1      size=  53      nSHD_c=   2.8333      nSHD=   2.7000      tpr_c=   0.3019      change_adj_count=230      
+2022-08-19 BST 19:55:44,565 - INFO -  epoch= 903      train_loss=  11.5660      val_loss=  24.7756      best=1      size=  53      nSHD_c=   2.8333      nSHD=   2.7000      tpr_c=   0.3019      change_adj_count=230      
+2022-08-19 BST 19:55:45,182 - INFO -  epoch= 905      train_loss=  11.8260      val_loss=  26.3168      best=1      size=  53      nSHD_c=   2.8333      nSHD=   2.7000      tpr_c=   0.3019      change_adj_count=230      
+2022-08-19 BST 19:55:51,444 - INFO -  epoch= 928      train_loss=  12.0117      val_loss=  25.1595      best=1      size=  53      nSHD_c=   2.8333      nSHD=   2.7000      tpr_c=   0.3019      change_adj_count=232      
+2022-08-19 BST 19:55:52,840 - INFO -  epoch= 933      train_loss=  11.1924      val_loss=  27.3339      best=1      size=  53      nSHD_c=   2.7333      nSHD=   2.7000      tpr_c=   0.3585      change_adj_count=233      
+2022-08-19 BST 19:55:55,826 - INFO -  epoch= 944      train_loss=  11.3771      val_loss=  26.0706      best=1      size=  53      nSHD_c=   2.7333      nSHD=   2.7000      tpr_c=   0.3585      change_adj_count=234      
+2022-08-19 BST 19:55:58,165 - INFO -  epoch= 952      train_loss=  11.0793      val_loss=  24.8821      best=1      size=  53      nSHD_c=   2.7333      nSHD=   2.7000      tpr_c=   0.3585      change_adj_count=236      
+2022-08-19 BST 19:56:08,334 - INFO -  epoch= 990      train_loss=  10.8309      val_loss=  25.2225      best=1      size=  53      nSHD_c=   2.8333      nSHD=   2.7000      tpr_c=   0.3019      change_adj_count=244      
+2022-08-19 BST 19:56:09,412 - INFO -  epoch= 994      train_loss=  10.8263      val_loss=  25.2441      best=1      size=  53      nSHD_c=   2.8333      nSHD=   2.7000      tpr_c=   0.3019      change_adj_count=246      
+2022-08-19 BST 19:56:11,028 - INFO -  epoch=1000      train_loss=  11.1307      val_loss=  24.8604      best=1      size=  53      nSHD_c=   2.8333      nSHD=   2.7000      tpr_c=   0.3019      change_adj_count=246      
+2022-08-19 BST 19:56:11,029 - INFO - 
+
+DAG 12: size_true=53	X.var()=15.8398
+2022-08-19 BST 19:56:11,389 - INFO -  epoch=   1      train_loss=  15.2294      val_loss=  13.4016      best=1      size=  57      nSHD_c=   3.3667      nSHD=   3.3333      tpr_c=   0.0526      change_adj_count=5      
+2022-08-19 BST 19:56:11,773 - INFO -  epoch=   2      train_loss=  13.9810      val_loss=  12.8162      best=1      size=  56      nSHD_c=   3.3000      nSHD=   3.2667      tpr_c=   0.0536      change_adj_count=6      
+2022-08-19 BST 19:56:12,082 - INFO -  epoch=   3      train_loss=  13.3586      val_loss=  11.2681      best=1      size=  59      nSHD_c=   3.3000      nSHD=   3.3000      tpr_c=   0.0847      change_adj_count=7      
+2022-08-19 BST 19:56:12,390 - INFO -  epoch=   4      train_loss=  12.9866      val_loss=   7.3035      best=1      size=  59      nSHD_c=   3.1667      nSHD=   3.1667      tpr_c=   0.1186      change_adj_count=8      
+2022-08-19 BST 19:56:37,631 - INFO -  epoch= 100      train_loss=  11.1133      val_loss=  54.1338      best=1      size=  48      nSHD_c=   2.5000      nSHD=   2.4667      tpr_c=   0.2292      change_adj_count=92      
+2022-08-19 BST 19:57:03,623 - INFO -  epoch= 200      train_loss=  10.0846      val_loss=  39.3325      best=1      size=  54      nSHD_c=   2.4333      nSHD=   2.4333      tpr_c=   0.2963      change_adj_count=148      
+2022-08-19 BST 19:57:30,000 - INFO -  epoch= 300      train_loss=   9.1593      val_loss=  26.0516      best=1      size=  54      nSHD_c=   2.2000      nSHD=   2.1333      tpr_c=   0.3519      change_adj_count=182      
+2022-08-19 BST 19:57:56,185 - INFO -  epoch= 400      train_loss=   7.9634      val_loss=  18.4068      best=1      size=  53      nSHD_c=   2.2000      nSHD=   2.1333      tpr_c=   0.3396      change_adj_count=200      
+2022-08-19 BST 19:58:22,617 - INFO -  epoch= 500      train_loss=   7.1961      val_loss=  11.2792      best=1      size=  53      nSHD_c=   2.2000      nSHD=   2.1333      tpr_c=   0.3396      change_adj_count=214      
+2022-08-19 BST 19:58:48,816 - INFO -  epoch= 600      train_loss=   6.6448      val_loss=   8.1943      best=1      size=  51      nSHD_c=   2.1000      nSHD=   2.0667      tpr_c=   0.3725      change_adj_count=237      
+2022-08-19 BST 19:59:14,989 - INFO -  epoch= 700      train_loss=   6.0013      val_loss=   7.4447      best=1      size=  52      nSHD_c=   2.2667      nSHD=   2.2333      tpr_c=   0.3269      change_adj_count=255      
+2022-08-19 BST 19:59:41,358 - INFO -  epoch= 800      train_loss=   5.5649      val_loss=   6.7482      best=1      size=  50      nSHD_c=   2.2667      nSHD=   2.2333      tpr_c=   0.3200      change_adj_count=270      
+2022-08-19 BST 20:00:07,691 - INFO -  epoch= 900      train_loss=   5.3079      val_loss=   6.0920      best=1      size=  50      nSHD_c=   2.2667      nSHD=   2.2333      tpr_c=   0.3200      change_adj_count=273      
+2022-08-19 BST 20:00:33,928 - INFO -  epoch=1000      train_loss=   4.9933      val_loss=   6.2606      best=1      size=  51      nSHD_c=   2.2667      nSHD=   2.2333      tpr_c=   0.3137      change_adj_count=278      
+2022-08-19 BST 20:00:33,929 - INFO - 
+
+DAG 13: size_true=53	X.var()=112.2632
+2022-08-19 BST 20:00:34,374 - INFO -  epoch=   1      train_loss= 106.5154      val_loss=  60.9577      best=1      size=  54      nSHD_c=   3.2333      nSHD=   3.2333      tpr_c=   0.0741      change_adj_count=5      
+2022-08-19 BST 20:00:34,776 - INFO -  epoch=   2      train_loss=  93.2228      val_loss=  47.3180      best=1      size=  54      nSHD_c=   3.2000      nSHD=   3.2000      tpr_c=   0.0741      change_adj_count=6      
+2022-08-19 BST 20:01:00,723 - INFO -  epoch= 100      train_loss=  43.6825      val_loss= 622.2965      best=1      size=  50      nSHD_c=   2.6667      nSHD=   2.6667      tpr_c=   0.2200      change_adj_count=71      
+2022-08-19 BST 20:01:26,666 - INFO -  epoch= 200      train_loss=  32.8194      val_loss= 282.4935      best=1      size=  49      nSHD_c=   2.7000      nSHD=   2.7000      tpr_c=   0.2041      change_adj_count=107      
+2022-08-19 BST 20:01:53,248 - INFO -  epoch= 300      train_loss=  25.1139      val_loss= 137.5543      best=1      size=  51      nSHD_c=   2.7333      nSHD=   2.7000      tpr_c=   0.1961      change_adj_count=119      
+2022-08-19 BST 20:02:19,681 - INFO -  epoch= 400      train_loss=  21.5042      val_loss=  76.6612      best=1      size=  50      nSHD_c=   2.7000      nSHD=   2.7000      tpr_c=   0.2000      change_adj_count=132      
+2022-08-19 BST 20:02:46,178 - INFO -  epoch= 500      train_loss=  16.7271      val_loss=  36.8423      best=1      size=  48      nSHD_c=   2.6333      nSHD=   2.6333      tpr_c=   0.2083      change_adj_count=145      
+2022-08-19 BST 20:03:12,763 - INFO -  epoch= 600      train_loss=  13.0584      val_loss=  23.6858      best=1      size=  48      nSHD_c=   2.6333      nSHD=   2.6333      tpr_c=   0.2083      change_adj_count=150      
+2022-08-19 BST 20:03:39,651 - INFO -  epoch= 700      train_loss=  12.0336      val_loss=  18.6055      best=1      size=  45      nSHD_c=   2.5333      nSHD=   2.5333      tpr_c=   0.2222      change_adj_count=161      
+2022-08-19 BST 20:04:06,835 - INFO -  epoch= 800      train_loss=  11.0327      val_loss=  14.2577      best=1      size=  44      nSHD_c=   2.5000      nSHD=   2.5000      tpr_c=   0.2273      change_adj_count=176      
+2022-08-19 BST 20:04:33,581 - INFO -  epoch= 900      train_loss=   9.7689      val_loss=  14.3205      best=1      size=  42      nSHD_c=   2.4333      nSHD=   2.4333      tpr_c=   0.2381      change_adj_count=190      
+2022-08-19 BST 20:05:00,523 - INFO -  epoch=1000      train_loss=   8.4112      val_loss=  14.8617      best=1      size=  41      nSHD_c=   2.4333      nSHD=   2.4333      tpr_c=   0.2195      change_adj_count=203      
+2022-08-19 BST 20:05:00,524 - INFO - 
+
+DAG 14: size_true=59	X.var()=16.7418
+2022-08-19 BST 20:05:00,809 - INFO -  epoch=   1      train_loss=  15.2863      val_loss=  14.1518      best=1      size=  60      nSHD_c=   3.5667      nSHD=   3.5667      tpr_c=   0.0833      change_adj_count=5      
+2022-08-19 BST 20:05:01,098 - INFO -  epoch=   2      train_loss=  13.9501      val_loss=  13.7266      best=1      size=  60      nSHD_c=   3.5667      nSHD=   3.5667      tpr_c=   0.0833      change_adj_count=6      
+2022-08-19 BST 20:05:01,382 - INFO -  epoch=   3      train_loss=  13.2059      val_loss=  11.6414      best=1      size=  58      nSHD_c=   3.4333      nSHD=   3.4333      tpr_c=   0.1034      change_adj_count=7      
+2022-08-19 BST 20:05:27,146 - INFO -  epoch= 100      train_loss=  11.6551      val_loss=  43.7615      best=1      size=  57      nSHD_c=   2.6667      nSHD=   2.5333      tpr_c=   0.2807      change_adj_count=97      
+2022-08-19 BST 20:05:53,202 - INFO -  epoch= 200      train_loss=  11.1558      val_loss=  41.3158      best=1      size=  58      nSHD_c=   2.6333      nSHD=   2.4333      tpr_c=   0.2759      change_adj_count=158      
+2022-08-19 BST 20:06:19,775 - INFO -  epoch= 300      train_loss=  10.7211      val_loss=  33.7547      best=1      size=  57      nSHD_c=   2.6000      nSHD=   2.4333      tpr_c=   0.2807      change_adj_count=201      
+2022-08-19 BST 20:06:46,358 - INFO -  epoch= 400      train_loss=  10.2623      val_loss=  29.6316      best=1      size=  57      nSHD_c=   2.6667      nSHD=   2.5000      tpr_c=   0.2632      change_adj_count=228      
+2022-08-19 BST 20:07:12,615 - INFO -  epoch= 500      train_loss=   9.6150      val_loss=  25.9163      best=1      size=  57      nSHD_c=   2.7333      nSHD=   2.6333      tpr_c=   0.2632      change_adj_count=254      
+2022-08-19 BST 20:07:39,223 - INFO -  epoch= 600      train_loss=   9.0905      val_loss=  21.4093      best=1      size=  56      nSHD_c=   2.6667      nSHD=   2.5333      tpr_c=   0.2679      change_adj_count=278      
+2022-08-19 BST 20:08:06,054 - INFO -  epoch= 700      train_loss=   8.7231      val_loss=  16.7031      best=1      size=  56      nSHD_c=   2.6000      nSHD=   2.5333      tpr_c=   0.3036      change_adj_count=303      
+2022-08-19 BST 20:08:32,470 - INFO -  epoch= 800      train_loss=   8.0764      val_loss=  13.7968      best=1      size=  56      nSHD_c=   2.6000      nSHD=   2.5333      tpr_c=   0.3036      change_adj_count=324      
+2022-08-19 BST 20:08:58,863 - INFO -  epoch= 900      train_loss=   7.4271      val_loss=  11.0658      best=1      size=  55      nSHD_c=   2.5000      nSHD=   2.4000      tpr_c=   0.3091      change_adj_count=342      
+2022-08-19 BST 20:09:25,091 - INFO -  epoch=1000      train_loss=   7.1015      val_loss=   9.7627      best=1      size=  54      nSHD_c=   2.4333      nSHD=   2.3333      tpr_c=   0.3333      change_adj_count=353      
+2022-08-19 BST 20:09:25,092 - INFO - 
+
+DAG 15: size_true=42	X.var()=8.6273
+2022-08-19 BST 20:09:25,444 - INFO -  epoch=   1      train_loss=   8.1767      val_loss=   7.9786      best=1      size=  57      nSHD_c=   3.1000      nSHD=   3.1000      tpr_c=   0.0351      change_adj_count=5      
+2022-08-19 BST 20:09:25,805 - INFO -  epoch=   2      train_loss=   7.5659      val_loss=   7.3816      best=1      size=  58      nSHD_c=   3.1000      nSHD=   3.1000      tpr_c=   0.0345      change_adj_count=6      
+2022-08-19 BST 20:09:26,178 - INFO -  epoch=   3      train_loss=   7.3933      val_loss=   6.6774      best=1      size=  56      nSHD_c=   2.9667      nSHD=   2.9667      tpr_c=   0.0536      change_adj_count=7      
+2022-08-19 BST 20:09:26,755 - INFO -  epoch=   5      train_loss=   7.0188      val_loss=   6.5556      best=1      size=  57      nSHD_c=   2.8333      nSHD=   2.8333      tpr_c=   0.0877      change_adj_count=9      
+2022-08-19 BST 20:09:27,078 - INFO -  epoch=   6      train_loss=   6.9557      val_loss=   5.7099      best=1      size=  57      nSHD_c=   2.8333      nSHD=   2.8333      tpr_c=   0.0877      change_adj_count=10      
+2022-08-19 BST 20:09:52,008 - INFO -  epoch= 100      train_loss=   6.6805      val_loss=  15.3134      best=1      size=  56      nSHD_c=   1.9667      nSHD=   1.9000      tpr_c=   0.3036      change_adj_count=91      
+2022-08-19 BST 20:10:18,240 - INFO -  epoch= 200      train_loss=   6.3960      val_loss=  16.0329      best=1      size=  53      nSHD_c=   2.0333      nSHD=   1.9667      tpr_c=   0.2830      change_adj_count=153      
+2022-08-19 BST 20:10:44,128 - INFO -  epoch= 300      train_loss=   6.0645      val_loss=  12.2989      best=1      size=  53      nSHD_c=   1.8000      nSHD=   1.7667      tpr_c=   0.3585      change_adj_count=196      
+2022-08-19 BST 20:11:08,683 - INFO -  epoch= 400      train_loss=   5.7124      val_loss=  10.2853      best=1      size=  54      nSHD_c=   1.6000      nSHD=   1.5667      tpr_c=   0.4259      change_adj_count=225      
+2022-08-19 BST 20:11:33,326 - INFO -  epoch= 500      train_loss=   5.5858      val_loss=   9.1727      best=1      size=  55      nSHD_c=   1.5667      nSHD=   1.5333      tpr_c=   0.4364      change_adj_count=255      
+2022-08-19 BST 20:11:58,330 - INFO -  epoch= 600      train_loss=   5.1181      val_loss=   6.9432      best=1      size=  53      nSHD_c=   1.6333      nSHD=   1.6000      tpr_c=   0.4151      change_adj_count=280      
+2022-08-19 BST 20:12:23,052 - INFO -  epoch= 700      train_loss=   4.7342      val_loss=   4.9714      best=1      size=  52      nSHD_c=   1.5333      nSHD=   1.5000      tpr_c=   0.4423      change_adj_count=301      
+2022-08-19 BST 20:12:47,452 - INFO -  epoch= 800      train_loss=   4.4739      val_loss=   3.4579      best=1      size=  52      nSHD_c=   1.5000      nSHD=   1.4333      tpr_c=   0.4423      change_adj_count=324      
+2022-08-19 BST 20:12:49,545 - INFO -  epoch= 808      train_loss=   4.4333      val_loss=   3.5959      best=1      size=  52      nSHD_c=   1.6000      nSHD=   1.5000      tpr_c=   0.4038      change_adj_count=327      
+2022-08-19 BST 20:12:56,244 - INFO -  epoch= 835      train_loss=   4.2750      val_loss=   3.2793      best=1      size=  52      nSHD_c=   1.5667      nSHD=   1.5000      tpr_c=   0.4231      change_adj_count=332      
+2022-08-19 BST 20:12:58,935 - INFO -  epoch= 845      train_loss=   4.3383      val_loss=   3.2899      best=1      size=  52      nSHD_c=   1.5000      nSHD=   1.4333      tpr_c=   0.4423      change_adj_count=335      
+2022-08-19 BST 20:13:00,584 - INFO -  epoch= 852      train_loss=   4.2300      val_loss=   3.1716      best=1      size=  52      nSHD_c=   1.5000      nSHD=   1.4333      tpr_c=   0.4423      change_adj_count=336      
+2022-08-19 BST 20:13:09,084 - INFO -  epoch= 886      train_loss=   4.1097      val_loss=   2.9223      best=1      size=  50      nSHD_c=   1.4333      nSHD=   1.3667      tpr_c=   0.4600      change_adj_count=343      
+2022-08-19 BST 20:13:11,381 - INFO -  epoch= 894      train_loss=   4.1983      val_loss=   2.9018      best=1      size=  51      nSHD_c=   1.4667      nSHD=   1.4000      tpr_c=   0.4510      change_adj_count=344      
+2022-08-19 BST 20:13:12,848 - INFO -  epoch= 900      train_loss=   4.1174      val_loss=   2.9767      best=1      size=  50      nSHD_c=   1.4333      nSHD=   1.3667      tpr_c=   0.4600      change_adj_count=345      
+2022-08-19 BST 20:13:13,628 - INFO -  epoch= 903      train_loss=   4.1453      val_loss=   2.8819      best=1      size=  50      nSHD_c=   1.4667      nSHD=   1.3667      tpr_c=   0.4400      change_adj_count=346      
+2022-08-19 BST 20:13:18,152 - INFO -  epoch= 921      train_loss=   4.0592      val_loss=   2.8264      best=1      size=  50      nSHD_c=   1.4667      nSHD=   1.3667      tpr_c=   0.4400      change_adj_count=349      
+2022-08-19 BST 20:13:23,255 - INFO -  epoch= 941      train_loss=   4.0215      val_loss=   2.9435      best=1      size=  50      nSHD_c=   1.4333      nSHD=   1.4000      tpr_c=   0.4600      change_adj_count=354      
+2022-08-19 BST 20:13:23,970 - INFO -  epoch= 943      train_loss=   3.9860      val_loss=   2.9438      best=1      size=  50      nSHD_c=   1.4333      nSHD=   1.4000      tpr_c=   0.4600      change_adj_count=354      
+2022-08-19 BST 20:13:24,826 - INFO -  epoch= 946      train_loss=   4.0445      val_loss=   2.7994      best=1      size=  50      nSHD_c=   1.4333      nSHD=   1.4000      tpr_c=   0.4600      change_adj_count=354      
+2022-08-19 BST 20:13:33,550 - INFO -  epoch= 980      train_loss=   3.8609      val_loss=   2.5390      best=1      size=  51      nSHD_c=   1.4667      nSHD=   1.4000      tpr_c=   0.4510      change_adj_count=358      
+2022-08-19 BST 20:13:38,559 - INFO -  epoch=1000      train_loss=   3.8183      val_loss=   2.6318      best=1      size=  51      nSHD_c=   1.4667      nSHD=   1.4333      tpr_c=   0.4510      change_adj_count=360      
+2022-08-19 BST 20:13:38,560 - INFO - 
+
+DAG 16: size_true=50	X.var()=12.1502
+2022-08-19 BST 20:13:38,826 - INFO -  epoch=   1      train_loss=  11.4037      val_loss=  12.1301      best=1      size=  54      nSHD_c=   3.2333      nSHD=   3.2333      tpr_c=   0.0370      change_adj_count=5      
+2022-08-19 BST 20:13:39,117 - INFO -  epoch=   2      train_loss=  10.5051      val_loss=  11.7752      best=1      size=  56      nSHD_c=   3.1667      nSHD=   3.1333      tpr_c=   0.0536      change_adj_count=6      
+2022-08-19 BST 20:13:39,405 - INFO -  epoch=   3      train_loss=  10.0934      val_loss=  10.6149      best=1      size=  55      nSHD_c=   3.1000      nSHD=   3.0667      tpr_c=   0.0545      change_adj_count=7      
+2022-08-19 BST 20:13:39,718 - INFO -  epoch=   4      train_loss=   9.9638      val_loss=   9.8511      best=1      size=  53      nSHD_c=   2.9667      nSHD=   2.9333      tpr_c=   0.0566      change_adj_count=8      
+2022-08-19 BST 20:13:39,994 - INFO -  epoch=   5      train_loss=   9.7642      val_loss=   9.5660      best=1      size=  53      nSHD_c=   3.0000      nSHD=   2.9667      tpr_c=   0.0566      change_adj_count=9      
+2022-08-19 BST 20:13:40,339 - INFO -  epoch=   6      train_loss=   9.6977      val_loss=   8.6307      best=1      size=  54      nSHD_c=   3.0000      nSHD=   3.0000      tpr_c=   0.0741      change_adj_count=10      
+2022-08-19 BST 20:13:40,718 - INFO -  epoch=   7      train_loss=   9.5312      val_loss=   7.0748      best=1      size=  55      nSHD_c=   2.9333      nSHD=   2.9000      tpr_c=   0.0909      change_adj_count=11      
+2022-08-19 BST 20:14:03,984 - INFO -  epoch= 100      train_loss=   9.1104      val_loss=  25.5555      best=1      size=  56      nSHD_c=   2.2000      nSHD=   2.1333      tpr_c=   0.3214      change_adj_count=93      
+2022-08-19 BST 20:14:29,086 - INFO -  epoch= 200      train_loss=   8.8491      val_loss=  21.4279      best=1      size=  54      nSHD_c=   2.1333      nSHD=   1.9333      tpr_c=   0.2963      change_adj_count=151      
+2022-08-19 BST 20:14:53,724 - INFO -  epoch= 300      train_loss=   8.5006      val_loss=  18.5959      best=1      size=  52      nSHD_c=   1.9667      nSHD=   1.9333      tpr_c=   0.3846      change_adj_count=191      
+2022-08-19 BST 20:15:18,822 - INFO -  epoch= 400      train_loss=   7.9447      val_loss=  15.0238      best=1      size=  53      nSHD_c=   2.0667      nSHD=   1.9667      tpr_c=   0.3396      change_adj_count=213      
+2022-08-19 BST 20:15:43,395 - INFO -  epoch= 500      train_loss=   7.5437      val_loss=  12.2089      best=1      size=  51      nSHD_c=   2.0000      nSHD=   1.9667      tpr_c=   0.3725      change_adj_count=229      
+2022-08-19 BST 20:16:07,885 - INFO -  epoch= 600      train_loss=   7.0112      val_loss=  10.2121      best=1      size=  51      nSHD_c=   1.9333      nSHD=   1.9000      tpr_c=   0.3922      change_adj_count=239      
+2022-08-19 BST 20:16:32,662 - INFO -  epoch= 700      train_loss=   6.6375      val_loss=   7.5748      best=1      size=  52      nSHD_c=   1.9333      nSHD=   1.8333      tpr_c=   0.3846      change_adj_count=255      
+2022-08-19 BST 20:16:57,159 - INFO -  epoch= 800      train_loss=   6.1657      val_loss=   6.3938      best=1      size=  50      nSHD_c=   1.8667      nSHD=   1.8000      tpr_c=   0.4000      change_adj_count=264      
+2022-08-19 BST 20:17:22,315 - INFO -  epoch= 900      train_loss=   5.6725      val_loss=   5.4604      best=1      size=  52      nSHD_c=   1.8333      nSHD=   1.8000      tpr_c=   0.4231      change_adj_count=278      
+2022-08-19 BST 20:17:22,799 - INFO -  epoch= 902      train_loss=   5.6656      val_loss=   5.1618      best=1      size=  51      nSHD_c=   1.8000      nSHD=   1.7667      tpr_c=   0.4314      change_adj_count=279      
+2022-08-19 BST 20:17:27,976 - INFO -  epoch= 922      train_loss=   5.7595      val_loss=   5.1385      best=1      size=  51      nSHD_c=   1.8000      nSHD=   1.7667      tpr_c=   0.4314      change_adj_count=282      
+2022-08-19 BST 20:17:30,722 - INFO -  epoch= 933      train_loss=   5.6464      val_loss=   5.2832      best=1      size=  51      nSHD_c=   1.8000      nSHD=   1.7667      tpr_c=   0.4314      change_adj_count=283      
+2022-08-19 BST 20:17:31,769 - INFO -  epoch= 937      train_loss=   5.7272      val_loss=   5.0933      best=1      size=  51      nSHD_c=   1.8000      nSHD=   1.7667      tpr_c=   0.4314      change_adj_count=283      
+2022-08-19 BST 20:17:38,571 - INFO -  epoch= 964      train_loss=   5.6395      val_loss=   4.6943      best=1      size=  51      nSHD_c=   1.8000      nSHD=   1.7667      tpr_c=   0.4314      change_adj_count=287      
+2022-08-19 BST 20:17:40,363 - INFO -  epoch= 971      train_loss=   5.4780      val_loss=   4.6898      best=1      size=  51      nSHD_c=   1.8000      nSHD=   1.7667      tpr_c=   0.4314      change_adj_count=287      
+2022-08-19 BST 20:17:46,108 - INFO -  epoch= 994      train_loss=   5.4897      val_loss=   4.5694      best=1      size=  51      nSHD_c=   1.8000      nSHD=   1.7667      tpr_c=   0.4314      change_adj_count=289      
+2022-08-19 BST 20:17:46,405 - INFO -  epoch= 995      train_loss=   5.5208      val_loss=   4.4805      best=1      size=  51      nSHD_c=   1.8000      nSHD=   1.7667      tpr_c=   0.4314      change_adj_count=289      
+2022-08-19 BST 20:17:47,623 - INFO -  epoch=1000      train_loss=   5.4905      val_loss=   4.6519      best=1      size=  50      nSHD_c=   1.7667      nSHD=   1.7333      tpr_c=   0.4400      change_adj_count=290      
+2022-08-19 BST 20:17:47,624 - INFO - 
+
+DAG 17: size_true=49	X.var()=16.5203
+2022-08-19 BST 20:17:47,891 - INFO -  epoch=   1      train_loss=  15.2803      val_loss=  15.7946      best=1      size=  55      nSHD_c=   3.3000      nSHD=   3.3000      tpr_c=   0.0000      change_adj_count=5      
+2022-08-19 BST 20:17:48,177 - INFO -  epoch=   2      train_loss=  13.8308      val_loss=  13.7086      best=1      size=  56      nSHD_c=   3.3333      nSHD=   3.3333      tpr_c=   0.0000      change_adj_count=6      
+2022-08-19 BST 20:17:48,440 - INFO -  epoch=   3      train_loss=  13.1001      val_loss=  12.4488      best=1      size=  55      nSHD_c=   3.2667      nSHD=   3.2667      tpr_c=   0.0000      change_adj_count=7      
+2022-08-19 BST 20:17:48,750 - INFO -  epoch=   4      train_loss=  12.8292      val_loss=  10.6390      best=1      size=  55      nSHD_c=   3.2333      nSHD=   3.2333      tpr_c=   0.0182      change_adj_count=8      
+2022-08-19 BST 20:18:12,920 - INFO -  epoch= 100      train_loss=  11.5724      val_loss=  47.2719      best=1      size=  51      nSHD_c=   2.3667      nSHD=   2.3333      tpr_c=   0.2745      change_adj_count=92      
+2022-08-19 BST 20:18:37,665 - INFO -  epoch= 200      train_loss=  11.1270      val_loss=  39.4450      best=1      size=  52      nSHD_c=   2.3000      nSHD=   2.3000      tpr_c=   0.3077      change_adj_count=141      
+2022-08-19 BST 20:19:02,426 - INFO -  epoch= 300      train_loss=  10.4926      val_loss=  34.6837      best=1      size=  51      nSHD_c=   2.2667      nSHD=   2.2667      tpr_c=   0.3137      change_adj_count=175      
+2022-08-19 BST 20:19:27,201 - INFO -  epoch= 400      train_loss=   9.8670      val_loss=  28.4110      best=1      size=  52      nSHD_c=   2.1667      nSHD=   2.1667      tpr_c=   0.3462      change_adj_count=189      
+2022-08-19 BST 20:19:51,571 - INFO -  epoch= 500      train_loss=   9.3742      val_loss=  21.9614      best=1      size=  52      nSHD_c=   2.2000      nSHD=   2.1667      tpr_c=   0.3269      change_adj_count=203      
+2022-08-19 BST 20:20:16,421 - INFO -  epoch= 600      train_loss=   8.6742      val_loss=  19.0105      best=1      size=  52      nSHD_c=   2.2000      nSHD=   2.1667      tpr_c=   0.3269      change_adj_count=217      
+2022-08-19 BST 20:20:42,310 - INFO -  epoch= 700      train_loss=   8.1264      val_loss=  13.2240      best=1      size=  50      nSHD_c=   2.1333      nSHD=   2.1000      tpr_c=   0.3400      change_adj_count=223      
+2022-08-19 BST 20:21:08,444 - INFO -  epoch= 800      train_loss=   7.5514      val_loss=  12.6348      best=1      size=  51      nSHD_c=   2.1667      nSHD=   2.1333      tpr_c=   0.3333      change_adj_count=235      
+2022-08-19 BST 20:21:34,539 - INFO -  epoch= 900      train_loss=   7.0983      val_loss=   8.8532      best=1      size=  50      nSHD_c=   2.0667      nSHD=   2.0333      tpr_c=   0.3600      change_adj_count=248      
+2022-08-19 BST 20:21:54,831 - INFO -  epoch= 977      train_loss=   6.6737      val_loss=   7.2926      best=1      size=  50      nSHD_c=   1.9667      nSHD=   1.9667      tpr_c=   0.4000      change_adj_count=260      
+2022-08-19 BST 20:21:55,908 - INFO -  epoch= 981      train_loss=   6.4979      val_loss=   7.3716      best=1      size=  50      nSHD_c=   1.9667      nSHD=   1.9667      tpr_c=   0.4000      change_adj_count=260      
+2022-08-19 BST 20:22:00,865 - INFO -  epoch=1000      train_loss=   6.4096      val_loss=   7.5132      best=1      size=  49      nSHD_c=   2.0333      nSHD=   2.0000      tpr_c=   0.3673      change_adj_count=262      
+2022-08-19 BST 20:22:00,866 - INFO - 
+
+DAG 18: size_true=56	X.var()=17.9506
+2022-08-19 BST 20:22:01,150 - INFO -  epoch=   1      train_loss=  16.9927      val_loss=  15.7900      best=1      size=  53      nSHD_c=   3.3667      nSHD=   3.3333      tpr_c=   0.0377      change_adj_count=5      
+2022-08-19 BST 20:22:01,463 - INFO -  epoch=   2      train_loss=  15.2883      val_loss=  12.9986      best=1      size=  54      nSHD_c=   3.3333      nSHD=   3.3000      tpr_c=   0.0556      change_adj_count=6      
+2022-08-19 BST 20:22:01,803 - INFO -  epoch=   3      train_loss=  14.3707      val_loss=   9.7914      best=1      size=  57      nSHD_c=   3.2667      nSHD=   3.2333      tpr_c=   0.0877      change_adj_count=7      
+2022-08-19 BST 20:22:27,418 - INFO -  epoch= 100      train_loss=  11.8941      val_loss=  60.3444      best=1      size=  58      nSHD_c=   2.8000      nSHD=   2.7667      tpr_c=   0.2241      change_adj_count=97      
+2022-08-19 BST 20:22:54,016 - INFO -  epoch= 200      train_loss=  11.2556      val_loss=  45.5651      best=1      size=  59      nSHD_c=   2.7667      nSHD=   2.7000      tpr_c=   0.2373      change_adj_count=170      
+2022-08-19 BST 20:23:20,900 - INFO -  epoch= 300      train_loss=  10.3599      val_loss=  32.6006      best=1      size=  57      nSHD_c=   2.6667      nSHD=   2.6333      tpr_c=   0.2632      change_adj_count=202      
+2022-08-19 BST 20:23:47,656 - INFO -  epoch= 400      train_loss=   9.4306      val_loss=  23.4380      best=1      size=  57      nSHD_c=   2.5667      nSHD=   2.5000      tpr_c=   0.2807      change_adj_count=229      
+2022-08-19 BST 20:24:14,520 - INFO -  epoch= 500      train_loss=   8.3577      val_loss=  15.9707      best=1      size=  57      nSHD_c=   2.4333      nSHD=   2.3000      tpr_c=   0.2982      change_adj_count=256      
+2022-08-19 BST 20:24:41,163 - INFO -  epoch= 600      train_loss=   7.5112      val_loss=  10.6086      best=1      size=  55      nSHD_c=   2.3000      nSHD=   2.2000      tpr_c=   0.3455      change_adj_count=269      
+2022-08-19 BST 20:25:07,860 - INFO -  epoch= 700      train_loss=   7.0191      val_loss=   9.1397      best=1      size=  57      nSHD_c=   2.3333      nSHD=   2.2667      tpr_c=   0.3509      change_adj_count=289      
+2022-08-19 BST 20:25:34,397 - INFO -  epoch= 800      train_loss=   6.3125      val_loss=   8.3053      best=1      size=  53      nSHD_c=   2.3000      nSHD=   2.2333      tpr_c=   0.3396      change_adj_count=302      
+2022-08-19 BST 20:25:49,289 - INFO -  epoch= 856      train_loss=   6.0387      val_loss=   7.1689      best=1      size=  53      nSHD_c=   2.1667      nSHD=   2.1000      tpr_c=   0.3774      change_adj_count=310      
+2022-08-19 BST 20:25:53,892 - INFO -  epoch= 873      train_loss=   5.9192      val_loss=   7.0929      best=1      size=  54      nSHD_c=   2.2000      nSHD=   2.1333      tpr_c=   0.3704      change_adj_count=311      
+2022-08-19 BST 20:25:55,911 - INFO -  epoch= 880      train_loss=   5.8583      val_loss=   7.1098      best=1      size=  53      nSHD_c=   2.2000      nSHD=   2.1000      tpr_c=   0.3585      change_adj_count=312      
+2022-08-19 BST 20:26:01,371 - INFO -  epoch= 900      train_loss=   5.9024      val_loss=   7.2416      best=1      size=  53      nSHD_c=   2.2000      nSHD=   2.1000      tpr_c=   0.3585      change_adj_count=313      
+2022-08-19 BST 20:26:04,427 - INFO -  epoch= 911      train_loss=   5.7491      val_loss=   7.0085      best=1      size=  53      nSHD_c=   2.2000      nSHD=   2.1000      tpr_c=   0.3585      change_adj_count=313      
+2022-08-19 BST 20:26:11,840 - INFO -  epoch= 939      train_loss=   5.5512      val_loss=   6.9706      best=1      size=  53      nSHD_c=   2.1667      nSHD=   2.1000      tpr_c=   0.3774      change_adj_count=315      
+2022-08-19 BST 20:26:12,809 - INFO -  epoch= 942      train_loss=   5.6336      val_loss=   6.8740      best=1      size=  53      nSHD_c=   2.1667      nSHD=   2.1000      tpr_c=   0.3774      change_adj_count=315      
+2022-08-19 BST 20:26:20,277 - INFO -  epoch= 971      train_loss=   5.5412      val_loss=   6.9800      best=1      size=  53      nSHD_c=   2.2000      nSHD=   2.1000      tpr_c=   0.3585      change_adj_count=316      
+2022-08-19 BST 20:26:24,848 - INFO -  epoch= 988      train_loss=   5.5294      val_loss=   6.9801      best=1      size=  53      nSHD_c=   2.2000      nSHD=   2.1667      tpr_c=   0.3774      change_adj_count=317      
+2022-08-19 BST 20:26:25,356 - INFO -  epoch= 990      train_loss=   5.4173      val_loss=   6.8906      best=1      size=  53      nSHD_c=   2.1667      nSHD=   2.1000      tpr_c=   0.3774      change_adj_count=318      
+2022-08-19 BST 20:26:28,238 - INFO -  epoch=1000      train_loss=   5.5087      val_loss=   7.2565      best=1      size=  53      nSHD_c=   2.2000      nSHD=   2.1667      tpr_c=   0.3774      change_adj_count=319      
+2022-08-19 BST 20:26:28,239 - INFO - 
+
+DAG 19: size_true=57	X.var()=24.8142
+2022-08-19 BST 20:26:28,557 - INFO -  epoch=   1      train_loss=  22.2516      val_loss=  23.7052      best=1      size=  57      nSHD_c=   3.5333      nSHD=   3.5333      tpr_c=   0.0526      change_adj_count=5      
+2022-08-19 BST 20:26:28,829 - INFO -  epoch=   2      train_loss=  19.9760      val_loss=  21.9920      best=1      size=  53      nSHD_c=   3.4667      nSHD=   3.4667      tpr_c=   0.0377      change_adj_count=6      
+2022-08-19 BST 20:26:29,125 - INFO -  epoch=   3      train_loss=  18.8494      val_loss=  20.6040      best=1      size=  58      nSHD_c=   3.5000      nSHD=   3.5000      tpr_c=   0.0517      change_adj_count=7      
+2022-08-19 BST 20:26:29,405 - INFO -  epoch=   4      train_loss=  18.1285      val_loss=  14.5281      best=1      size=  57      nSHD_c=   3.4000      nSHD=   3.3667      tpr_c=   0.0526      change_adj_count=8      
+2022-08-19 BST 20:26:29,676 - INFO -  epoch=   5      train_loss=  17.7973      val_loss=  15.1349      best=1      size=  56      nSHD_c=   3.3667      nSHD=   3.3333      tpr_c=   0.0536      change_adj_count=9      
+2022-08-19 BST 20:26:54,977 - INFO -  epoch= 100      train_loss=  16.1126      val_loss= 110.1652      best=1      size=  58      nSHD_c=   2.9667      nSHD=   2.9333      tpr_c=   0.2069      change_adj_count=92      
+2022-08-19 BST 20:27:21,729 - INFO -  epoch= 200      train_loss=  14.9678      val_loss=  85.3736      best=1      size=  55      nSHD_c=   2.7667      nSHD=   2.7000      tpr_c=   0.2364      change_adj_count=146      
+2022-08-19 BST 20:27:48,316 - INFO -  epoch= 300      train_loss=  13.8814      val_loss=  66.9494      best=1      size=  56      nSHD_c=   2.7333      nSHD=   2.7000      tpr_c=   0.2679      change_adj_count=182      
+2022-08-19 BST 20:28:14,887 - INFO -  epoch= 400      train_loss=  12.7466      val_loss=  48.3601      best=1      size=  58      nSHD_c=   2.8000      nSHD=   2.7333      tpr_c=   0.2414      change_adj_count=211      
+2022-08-19 BST 20:28:41,617 - INFO -  epoch= 500      train_loss=  11.2858      val_loss=  35.8963      best=1      size=  56      nSHD_c=   2.7000      nSHD=   2.6000      tpr_c=   0.2500      change_adj_count=233      
+2022-08-19 BST 20:29:08,079 - INFO -  epoch= 600      train_loss=   9.8991      val_loss=  26.3260      best=1      size=  54      nSHD_c=   2.7000      nSHD=   2.6667      tpr_c=   0.2593      change_adj_count=253      
+2022-08-19 BST 20:29:34,089 - INFO -  epoch= 700      train_loss=   8.9110      val_loss=  20.4623      best=1      size=  55      nSHD_c=   2.7667      nSHD=   2.7000      tpr_c=   0.2364      change_adj_count=263      
+2022-08-19 BST 20:30:00,570 - INFO -  epoch= 800      train_loss=   7.9321      val_loss=  17.7735      best=1      size=  54      nSHD_c=   2.6333      nSHD=   2.5333      tpr_c=   0.2593      change_adj_count=277      
+2022-08-19 BST 20:30:26,842 - INFO -  epoch= 900      train_loss=   7.0088      val_loss=  14.0912      best=1      size=  53      nSHD_c=   2.5000      nSHD=   2.4333      tpr_c=   0.3019      change_adj_count=292      
+2022-08-19 BST 20:30:53,433 - INFO -  epoch=1000      train_loss=   6.3420      val_loss=  12.3986      best=1      size=  53      nSHD_c=   2.4667      nSHD=   2.4333      tpr_c=   0.3208      change_adj_count=303      
+2022-08-19 BST 20:30:53,434 - INFO - 
+
+DAG 20: size_true=59	X.var()=201.6824
+2022-08-19 BST 20:30:53,715 - INFO -  epoch=   1      train_loss= 185.2923      val_loss= 146.2581      best=1      size=  50      nSHD_c=   3.2667      nSHD=   3.2667      tpr_c=   0.0200      change_adj_count=5      
+2022-08-19 BST 20:30:54,004 - INFO -  epoch=   2      train_loss= 155.9060      val_loss=  94.9569      best=1      size=  50      nSHD_c=   3.2333      nSHD=   3.1667      tpr_c=   0.0200      change_adj_count=6      
+2022-08-19 BST 20:31:20,099 - INFO -  epoch= 100      train_loss=  71.3541      val_loss=1078.1604      best=1      size=  54      nSHD_c=   3.3667      nSHD=   3.3667      tpr_c=   0.1111      change_adj_count=71      
+2022-08-19 BST 20:31:46,489 - INFO -  epoch= 200      train_loss=  52.6106      val_loss= 425.0467      best=1      size=  52      nSHD_c=   3.2000      nSHD=   3.1667      tpr_c=   0.1346      change_adj_count=124      
+2022-08-19 BST 20:32:13,124 - INFO -  epoch= 300      train_loss=  40.4448      val_loss= 193.2402      best=1      size=  51      nSHD_c=   3.1667      nSHD=   3.1333      tpr_c=   0.1373      change_adj_count=154      
+2022-08-19 BST 20:32:39,803 - INFO -  epoch= 400      train_loss=  34.3014      val_loss= 123.0959      best=1      size=  51      nSHD_c=   3.1333      nSHD=   3.1333      tpr_c=   0.1569      change_adj_count=165      
+2022-08-19 BST 20:33:06,436 - INFO -  epoch= 500      train_loss=  28.7558      val_loss=  84.9690      best=1      size=  51      nSHD_c=   3.0000      nSHD=   3.0000      tpr_c=   0.1961      change_adj_count=197      
+2022-08-19 BST 20:33:32,890 - INFO -  epoch= 600      train_loss=  26.3869      val_loss=  58.7247      best=1      size=  51      nSHD_c=   2.9667      nSHD=   2.9667      tpr_c=   0.1961      change_adj_count=234      
+2022-08-19 BST 20:33:59,152 - INFO -  epoch= 700      train_loss=  23.9820      val_loss=  39.6246      best=1      size=  51      nSHD_c=   2.9333      nSHD=   2.9000      tpr_c=   0.1961      change_adj_count=263      
+2022-08-19 BST 20:34:25,961 - INFO -  epoch= 800      train_loss=  20.4466      val_loss=  38.7244      best=1      size=  51      nSHD_c=   2.9000      nSHD=   2.9000      tpr_c=   0.2157      change_adj_count=277      
+2022-08-19 BST 20:34:30,287 - INFO -  epoch= 816      train_loss=  20.3559      val_loss=  34.4158      best=1      size=  51      nSHD_c=   2.9667      nSHD=   2.9667      tpr_c=   0.1961      change_adj_count=280      
+2022-08-19 BST 20:34:33,830 - INFO -  epoch= 829      train_loss=  19.9094      val_loss=  34.3879      best=1      size=  51      nSHD_c=   2.9667      nSHD=   2.9667      tpr_c=   0.1961      change_adj_count=284      
+2022-08-19 BST 20:34:35,847 - INFO -  epoch= 836      train_loss=  19.5851      val_loss=  32.5335      best=1      size=  51      nSHD_c=   2.9667      nSHD=   2.9667      tpr_c=   0.1961      change_adj_count=284      
+2022-08-19 BST 20:34:43,993 - INFO -  epoch= 866      train_loss=  18.9140      val_loss=  31.2906      best=1      size=  51      nSHD_c=   2.9667      nSHD=   2.9667      tpr_c=   0.1961      change_adj_count=288      
+2022-08-19 BST 20:34:48,422 - INFO -  epoch= 882      train_loss=  18.1243      val_loss=  29.3347      best=1      size=  51      nSHD_c=   2.9667      nSHD=   2.9667      tpr_c=   0.1961      change_adj_count=288      
+2022-08-19 BST 20:34:50,241 - INFO -  epoch= 889      train_loss=  18.8836      val_loss=  29.2505      best=1      size=  50      nSHD_c=   2.9333      nSHD=   2.9333      tpr_c=   0.2000      change_adj_count=289      
+2022-08-19 BST 20:34:51,928 - INFO -  epoch= 895      train_loss=  17.9181      val_loss=  28.0563      best=1      size=  50      nSHD_c=   2.9333      nSHD=   2.9333      tpr_c=   0.2000      change_adj_count=289      
+2022-08-19 BST 20:34:53,422 - INFO -  epoch= 900      train_loss=  18.0805      val_loss=  29.1599      best=1      size=  50      nSHD_c=   2.9333      nSHD=   2.9333      tpr_c=   0.2000      change_adj_count=291      
+2022-08-19 BST 20:34:58,350 - INFO -  epoch= 918      train_loss=  17.8182      val_loss=  27.0187      best=1      size=  49      nSHD_c=   2.9667      nSHD=   2.9667      tpr_c=   0.1837      change_adj_count=296      
+2022-08-19 BST 20:34:58,632 - INFO -  epoch= 919      train_loss=  17.9140      val_loss=  25.5731      best=1      size=  49      nSHD_c=   2.9667      nSHD=   2.9667      tpr_c=   0.1837      change_adj_count=296      
+2022-08-19 BST 20:34:59,145 - INFO -  epoch= 921      train_loss=  17.7670      val_loss=  25.8160      best=1      size=  49      nSHD_c=   2.9667      nSHD=   2.9667      tpr_c=   0.1837      change_adj_count=296      
+2022-08-19 BST 20:35:01,652 - INFO -  epoch= 930      train_loss=  17.6498      val_loss=  26.7747      best=1      size=  49      nSHD_c=   2.9000      nSHD=   2.9000      tpr_c=   0.2041      change_adj_count=300      
+2022-08-19 BST 20:35:07,478 - INFO -  epoch= 952      train_loss=  17.6364      val_loss=  27.2861      best=1      size=  49      nSHD_c=   2.9667      nSHD=   2.9667      tpr_c=   0.1837      change_adj_count=304      
+2022-08-19 BST 20:35:10,063 - INFO -  epoch= 962      train_loss=  17.4638      val_loss=  25.3551      best=1      size=  49      nSHD_c=   2.9667      nSHD=   2.9667      tpr_c=   0.1837      change_adj_count=304      
+2022-08-19 BST 20:35:17,778 - INFO -  epoch= 991      train_loss=  16.3471      val_loss=  24.6401      best=1      size=  49      nSHD_c=   2.9000      nSHD=   2.9000      tpr_c=   0.2041      change_adj_count=310      
+2022-08-19 BST 20:35:18,156 - INFO -  epoch= 992      train_loss=  16.2487      val_loss=  24.1066      best=1      size=  49      nSHD_c=   2.9000      nSHD=   2.9000      tpr_c=   0.2041      change_adj_count=310      
+2022-08-19 BST 20:35:20,427 - INFO -  epoch=1000      train_loss=  16.7975      val_loss=  26.3487      best=1      size=  49      nSHD_c=   2.9667      nSHD=   2.9667      tpr_c=   0.1837      change_adj_count=316      
+2022-08-19 BST 20:35:20,428 - INFO - 
+
+DAG 21: size_true=57	X.var()=21.1204
+2022-08-19 BST 20:35:20,731 - INFO -  epoch=   1      train_loss=  19.2269      val_loss=  18.3749      best=1      size=  53      nSHD_c=   3.3000      nSHD=   3.3000      tpr_c=   0.0566      change_adj_count=5      
+2022-08-19 BST 20:35:21,007 - INFO -  epoch=   2      train_loss=  17.0924      val_loss=  16.5198      best=1      size=  53      nSHD_c=   3.3333      nSHD=   3.3333      tpr_c=   0.0566      change_adj_count=6      
+2022-08-19 BST 20:35:21,281 - INFO -  epoch=   3      train_loss=  15.8032      val_loss=  12.7150      best=1      size=  55      nSHD_c=   3.4333      nSHD=   3.4333      tpr_c=   0.0545      change_adj_count=7      
+2022-08-19 BST 20:35:21,579 - INFO -  epoch=   4      train_loss=  15.4508      val_loss=  10.1713      best=1      size=  54      nSHD_c=   3.3333      nSHD=   3.3333      tpr_c=   0.0556      change_adj_count=8      
+2022-08-19 BST 20:35:47,131 - INFO -  epoch= 100      train_loss=  13.1334      val_loss= 101.7005      best=1      size=  54      nSHD_c=   2.9000      nSHD=   2.8667      tpr_c=   0.1852      change_adj_count=89      
+2022-08-19 BST 20:36:13,749 - INFO -  epoch= 200      train_loss=  12.5917      val_loss=  79.7958      best=1      size=  54      nSHD_c=   2.8667      nSHD=   2.8667      tpr_c=   0.2037      change_adj_count=136      
+2022-08-19 BST 20:36:40,105 - INFO -  epoch= 300      train_loss=  11.5177      val_loss=  65.7075      best=1      size=  54      nSHD_c=   2.8000      nSHD=   2.8000      tpr_c=   0.2222      change_adj_count=161      
+2022-08-19 BST 20:37:06,301 - INFO -  epoch= 400      train_loss=  10.9388      val_loss=  49.9361      best=1      size=  54      nSHD_c=   2.8000      nSHD=   2.8000      tpr_c=   0.2222      change_adj_count=192      
+2022-08-19 BST 20:37:32,620 - INFO -  epoch= 500      train_loss=  10.1966      val_loss=  41.9472      best=1      size=  54      nSHD_c=   2.8667      nSHD=   2.8667      tpr_c=   0.2037      change_adj_count=213      
+2022-08-19 BST 20:37:58,936 - INFO -  epoch= 600      train_loss=   9.5855      val_loss=  28.5552      best=1      size=  53      nSHD_c=   2.7333      nSHD=   2.7000      tpr_c=   0.2264      change_adj_count=230      
+2022-08-19 BST 20:38:25,212 - INFO -  epoch= 700      train_loss=   8.9404      val_loss=  28.6794      best=1      size=  53      nSHD_c=   2.7000      nSHD=   2.6667      tpr_c=   0.2453      change_adj_count=250      
+2022-08-19 BST 20:38:51,857 - INFO -  epoch= 800      train_loss=   8.3275      val_loss=  23.3608      best=1      size=  53      nSHD_c=   2.7000      nSHD=   2.6667      tpr_c=   0.2453      change_adj_count=258      
+2022-08-19 BST 20:39:18,262 - INFO -  epoch= 900      train_loss=   7.9439      val_loss=  19.4055      best=1      size=  53      nSHD_c=   2.6333      nSHD=   2.6000      tpr_c=   0.2642      change_adj_count=265      
+2022-08-19 BST 20:39:44,717 - INFO -  epoch=1000      train_loss=   7.4576      val_loss=  15.9866      best=1      size=  52      nSHD_c=   2.6000      nSHD=   2.5667      tpr_c=   0.2692      change_adj_count=276      
+2022-08-19 BST 20:39:44,718 - INFO - 
+
+DAG 22: size_true=60	X.var()=129.8499
+2022-08-19 BST 20:39:44,989 - INFO -  epoch=   1      train_loss= 119.2920      val_loss=  85.6921      best=1      size=  56      nSHD_c=   3.3333      nSHD=   3.3000      tpr_c=   0.0893      change_adj_count=5      
+2022-08-19 BST 20:39:45,260 - INFO -  epoch=   2      train_loss= 104.9485      val_loss=  72.8405      best=1      size=  56      nSHD_c=   3.4333      nSHD=   3.4333      tpr_c=   0.0714      change_adj_count=6      
+2022-08-19 BST 20:40:11,078 - INFO -  epoch= 100      train_loss=  50.5835      val_loss= 875.6446      best=1      size=  57      nSHD_c=   2.9333      nSHD=   2.9000      tpr_c=   0.2281      change_adj_count=66      
+2022-08-19 BST 20:40:37,345 - INFO -  epoch= 200      train_loss=  40.7692      val_loss= 396.0188      best=1      size=  57      nSHD_c=   3.0000      nSHD=   2.9667      tpr_c=   0.2105      change_adj_count=88      
+2022-08-19 BST 20:41:03,618 - INFO -  epoch= 300      train_loss=  32.1363      val_loss= 222.4901      best=1      size=  59      nSHD_c=   3.0667      nSHD=   3.0333      tpr_c=   0.2034      change_adj_count=107      
+2022-08-19 BST 20:41:28,795 - INFO -  epoch= 400      train_loss=  26.0416      val_loss=  99.0949      best=1      size=  58      nSHD_c=   2.9667      nSHD=   2.9333      tpr_c=   0.2241      change_adj_count=120      
+2022-08-19 BST 20:41:53,463 - INFO -  epoch= 500      train_loss=  21.6201      val_loss=  55.3421      best=1      size=  56      nSHD_c=   2.8667      nSHD=   2.8667      tpr_c=   0.2500      change_adj_count=141      
+2022-08-19 BST 20:42:18,908 - INFO -  epoch= 600      train_loss=  18.0141      val_loss=  33.6201      best=1      size=  56      nSHD_c=   2.8667      nSHD=   2.8667      tpr_c=   0.2500      change_adj_count=150      
+2022-08-19 BST 20:42:32,635 - INFO -  epoch= 655      train_loss=  16.3447      val_loss=  26.4549      best=1      size=  56      nSHD_c=   2.8667      nSHD=   2.8667      tpr_c=   0.2500      change_adj_count=152      
+2022-08-19 BST 20:42:33,867 - INFO -  epoch= 660      train_loss=  16.3624      val_loss=  24.6688      best=1      size=  54      nSHD_c=   2.8000      nSHD=   2.8000      tpr_c=   0.2593      change_adj_count=154      
+2022-08-19 BST 20:42:37,406 - INFO -  epoch= 673      train_loss=  16.4710      val_loss=  24.6832      best=1      size=  54      nSHD_c=   2.8000      nSHD=   2.8000      tpr_c=   0.2593      change_adj_count=158      
+2022-08-19 BST 20:42:37,719 - INFO -  epoch= 674      train_loss=  16.0750      val_loss=  21.6580      best=1      size=  54      nSHD_c=   2.8000      nSHD=   2.8000      tpr_c=   0.2593      change_adj_count=158      
+2022-08-19 BST 20:42:41,260 - INFO -  epoch= 688      train_loss=  15.8744      val_loss=  19.6763      best=1      size=  54      nSHD_c=   2.7000      nSHD=   2.6667      tpr_c=   0.2778      change_adj_count=165      
+2022-08-19 BST 20:42:43,805 - INFO -  epoch= 698      train_loss=  15.3339      val_loss=  17.6073      best=1      size=  54      nSHD_c=   2.6667      nSHD=   2.6000      tpr_c=   0.2778      change_adj_count=169      
+2022-08-19 BST 20:42:44,321 - INFO -  epoch= 700      train_loss=  15.4863      val_loss=  17.2722      best=1      size=  54      nSHD_c=   2.6667      nSHD=   2.6000      tpr_c=   0.2778      change_adj_count=169      
+2022-08-19 BST 20:42:45,321 - INFO -  epoch= 704      train_loss=  15.3649      val_loss=  15.8248      best=1      size=  54      nSHD_c=   2.6667      nSHD=   2.6000      tpr_c=   0.2778      change_adj_count=170      
+2022-08-19 BST 20:42:46,400 - INFO -  epoch= 709      train_loss=  15.1532      val_loss=  16.3664      best=1      size=  54      nSHD_c=   2.6667      nSHD=   2.6000      tpr_c=   0.2778      change_adj_count=170      
+2022-08-19 BST 20:42:49,236 - INFO -  epoch= 720      train_loss=  15.0511      val_loss=  15.2886      best=1      size=  54      nSHD_c=   2.6667      nSHD=   2.6000      tpr_c=   0.2778      change_adj_count=170      
+2022-08-19 BST 20:42:49,554 - INFO -  epoch= 721      train_loss=  15.1988      val_loss=  16.2050      best=1      size=  54      nSHD_c=   2.6667      nSHD=   2.6000      tpr_c=   0.2778      change_adj_count=170      
+2022-08-19 BST 20:42:50,560 - INFO -  epoch= 725      train_loss=  15.1842      val_loss=  15.3959      best=1      size=  54      nSHD_c=   2.6667      nSHD=   2.6000      tpr_c=   0.2778      change_adj_count=170      
+2022-08-19 BST 20:42:51,664 - INFO -  epoch= 729      train_loss=  15.1782      val_loss=  14.6346      best=1      size=  54      nSHD_c=   2.6667      nSHD=   2.6000      tpr_c=   0.2778      change_adj_count=170      
+2022-08-19 BST 20:42:57,155 - INFO -  epoch= 750      train_loss=  14.5179      val_loss=  14.6469      best=1      size=  54      nSHD_c=   2.6667      nSHD=   2.6000      tpr_c=   0.2778      change_adj_count=175      
+2022-08-19 BST 20:43:00,731 - INFO -  epoch= 764      train_loss=  13.9686      val_loss=  13.3401      best=1      size=  54      nSHD_c=   2.6667      nSHD=   2.6000      tpr_c=   0.2778      change_adj_count=175      
+2022-08-19 BST 20:43:07,814 - INFO -  epoch= 792      train_loss=  14.1056      val_loss=  13.9566      best=1      size=  54      nSHD_c=   2.6667      nSHD=   2.6000      tpr_c=   0.2778      change_adj_count=175      
+2022-08-19 BST 20:43:08,546 - INFO -  epoch= 795      train_loss=  13.7832      val_loss=  12.9475      best=1      size=  54      nSHD_c=   2.6667      nSHD=   2.6000      tpr_c=   0.2778      change_adj_count=175      
+2022-08-19 BST 20:43:09,143 - INFO -  epoch= 797      train_loss=  13.7019      val_loss=  12.9412      best=1      size=  54      nSHD_c=   2.6667      nSHD=   2.6000      tpr_c=   0.2778      change_adj_count=175      
+2022-08-19 BST 20:43:10,044 - INFO -  epoch= 800      train_loss=  14.0227      val_loss=  16.6986      best=1      size=  54      nSHD_c=   2.6333      nSHD=   2.5667      tpr_c=   0.2963      change_adj_count=175      
+2022-08-19 BST 20:43:15,510 - INFO -  epoch= 822      train_loss=  13.5909      val_loss=  13.0228      best=1      size=  54      nSHD_c=   2.6667      nSHD=   2.6000      tpr_c=   0.2778      change_adj_count=180      
+2022-08-19 BST 20:43:19,048 - INFO -  epoch= 836      train_loss=  12.7597      val_loss=  15.6997      best=1      size=  54      nSHD_c=   2.6333      nSHD=   2.5667      tpr_c=   0.2963      change_adj_count=180      
+2022-08-19 BST 20:43:26,871 - INFO -  epoch= 868      train_loss=  11.9231      val_loss=  14.2915      best=1      size=  53      nSHD_c=   2.6000      nSHD=   2.5333      tpr_c=   0.3019      change_adj_count=182      
+2022-08-19 BST 20:43:28,473 - INFO -  epoch= 874      train_loss=  12.3551      val_loss=  12.8142      best=1      size=  53      nSHD_c=   2.6000      nSHD=   2.5333      tpr_c=   0.3019      change_adj_count=183      
+2022-08-19 BST 20:43:30,579 - INFO -  epoch= 883      train_loss=  12.0791      val_loss=  12.0058      best=1      size=  53      nSHD_c=   2.6333      nSHD=   2.5667      tpr_c=   0.2830      change_adj_count=183      
+2022-08-19 BST 20:43:31,135 - INFO -  epoch= 885      train_loss=  12.1466      val_loss=  12.4974      best=1      size=  53      nSHD_c=   2.6000      nSHD=   2.5333      tpr_c=   0.3019      change_adj_count=183      
+2022-08-19 BST 20:43:34,894 - INFO -  epoch= 900      train_loss=  12.0625      val_loss=  14.4218      best=1      size=  53      nSHD_c=   2.6000      nSHD=   2.5333      tpr_c=   0.3019      change_adj_count=184      
+2022-08-19 BST 20:43:35,341 - INFO -  epoch= 901      train_loss=  12.0510      val_loss=  13.3261      best=1      size=  53      nSHD_c=   2.6000      nSHD=   2.5333      tpr_c=   0.3019      change_adj_count=184      
+2022-08-19 BST 20:43:38,351 - INFO -  epoch= 913      train_loss=  11.4646      val_loss=  13.6801      best=1      size=  53      nSHD_c=   2.6000      nSHD=   2.5333      tpr_c=   0.3019      change_adj_count=185      
+2022-08-19 BST 20:43:45,121 - INFO -  epoch= 940      train_loss=  11.2844      val_loss=  13.6186      best=1      size=  53      nSHD_c=   2.6000      nSHD=   2.5333      tpr_c=   0.3019      change_adj_count=189      
+2022-08-19 BST 20:43:48,028 - INFO -  epoch= 952      train_loss=  11.0313      val_loss=  13.1421      best=1      size=  53      nSHD_c=   2.6000      nSHD=   2.5333      tpr_c=   0.3019      change_adj_count=192      
+2022-08-19 BST 20:43:48,958 - INFO -  epoch= 955      train_loss=  11.1961      val_loss=  14.3188      best=1      size=  53      nSHD_c=   2.6000      nSHD=   2.5333      tpr_c=   0.3019      change_adj_count=192      
+2022-08-19 BST 20:43:51,305 - INFO -  epoch= 964      train_loss=  10.8641      val_loss=  13.4115      best=1      size=  52      nSHD_c=   2.5667      nSHD=   2.5000      tpr_c=   0.3077      change_adj_count=193      
+2022-08-19 BST 20:43:52,491 - INFO -  epoch= 969      train_loss=  10.9368      val_loss=  14.1991      best=1      size=  52      nSHD_c=   2.5667      nSHD=   2.5000      tpr_c=   0.3077      change_adj_count=194      
+2022-08-19 BST 20:43:54,656 - INFO -  epoch= 977      train_loss=  10.2915      val_loss=  14.7153      best=1      size=  52      nSHD_c=   2.5667      nSHD=   2.5000      tpr_c=   0.3077      change_adj_count=196      
+2022-08-19 BST 20:44:00,509 - INFO -  epoch=1000      train_loss=  10.5882      val_loss=  14.8783      best=1      size=  51      nSHD_c=   2.5333      nSHD=   2.4667      tpr_c=   0.3137      change_adj_count=199      
+2022-08-19 BST 20:44:00,511 - INFO - 
+
+DAG 23: size_true=49	X.var()=14.1269
+2022-08-19 BST 20:44:00,767 - INFO -  epoch=   1      train_loss=  13.4051      val_loss=  13.5360      best=1      size=  57      nSHD_c=   3.1667      nSHD=   3.1667      tpr_c=   0.0702      change_adj_count=5      
+2022-08-19 BST 20:44:01,036 - INFO -  epoch=   2      train_loss=  12.6125      val_loss=  13.1222      best=1      size=  57      nSHD_c=   3.1667      nSHD=   3.1667      tpr_c=   0.0702      change_adj_count=6      
+2022-08-19 BST 20:44:01,395 - INFO -  epoch=   3      train_loss=  12.1634      val_loss=  12.5688      best=1      size=  57      nSHD_c=   3.1333      nSHD=   3.1000      tpr_c=   0.0702      change_adj_count=7      
+2022-08-19 BST 20:44:01,748 - INFO -  epoch=   4      train_loss=  11.7422      val_loss=  11.6923      best=1      size=  58      nSHD_c=   3.1333      nSHD=   3.0667      tpr_c=   0.0690      change_adj_count=8      
+2022-08-19 BST 20:44:02,089 - INFO -  epoch=   5      train_loss=  11.5823      val_loss=   9.7165      best=1      size=  58      nSHD_c=   3.1000      nSHD=   3.0000      tpr_c=   0.0690      change_adj_count=9      
+2022-08-19 BST 20:44:02,372 - INFO -  epoch=   6      train_loss=  11.3520      val_loss=   7.6956      best=1      size=  56      nSHD_c=   2.9333      nSHD=   2.9000      tpr_c=   0.1250      change_adj_count=10      
+2022-08-19 BST 20:44:25,740 - INFO -  epoch= 100      train_loss=  10.2199      val_loss=  52.0586      best=1      size=  53      nSHD_c=   2.1333      nSHD=   2.1000      tpr_c=   0.3208      change_adj_count=94      
+2022-08-19 BST 20:44:50,261 - INFO -  epoch= 200      train_loss=   9.1775      val_loss=  38.5827      best=1      size=  55      nSHD_c=   1.9333      nSHD=   1.9000      tpr_c=   0.4000      change_adj_count=154      
+2022-08-19 BST 20:45:14,901 - INFO -  epoch= 300      train_loss=   8.5624      val_loss=  25.8877      best=1      size=  54      nSHD_c=   1.8667      nSHD=   1.8333      tpr_c=   0.4259      change_adj_count=195      
+2022-08-19 BST 20:45:39,177 - INFO -  epoch= 400      train_loss=   7.8721      val_loss=  18.9659      best=1      size=  53      nSHD_c=   1.7667      nSHD=   1.7333      tpr_c=   0.4528      change_adj_count=229      
+2022-08-19 BST 20:46:04,517 - INFO -  epoch= 500      train_loss=   7.0407      val_loss=  12.7551      best=1      size=  52      nSHD_c=   1.7000      nSHD=   1.6333      tpr_c=   0.4615      change_adj_count=251      
+2022-08-19 BST 20:46:29,403 - INFO -  epoch= 600      train_loss=   6.3734      val_loss=   8.2449      best=1      size=  52      nSHD_c=   1.6667      nSHD=   1.5667      tpr_c=   0.4615      change_adj_count=268      
+2022-08-19 BST 20:46:54,439 - INFO -  epoch= 700      train_loss=   5.9803      val_loss=   6.9948      best=1      size=  51      nSHD_c=   1.6333      nSHD=   1.5333      tpr_c=   0.4706      change_adj_count=290      
+2022-08-19 BST 20:47:18,608 - INFO -  epoch= 800      train_loss=   5.6259      val_loss=   6.0405      best=1      size=  54      nSHD_c=   1.6667      nSHD=   1.5667      tpr_c=   0.4630      change_adj_count=304      
+2022-08-19 BST 20:47:43,313 - INFO -  epoch= 900      train_loss=   5.3956      val_loss=   5.9592      best=1      size=  53      nSHD_c=   1.6333      nSHD=   1.5333      tpr_c=   0.4717      change_adj_count=319      
+2022-08-19 BST 20:48:07,874 - INFO -  epoch=1000      train_loss=   4.9656      val_loss=   5.2980      best=1      size=  53      nSHD_c=   1.7000      nSHD=   1.6000      tpr_c=   0.4528      change_adj_count=338      
+2022-08-19 BST 20:48:07,875 - INFO - 
+last_mean_nshd_c=2.4361
+2022-08-19 BST 20:48:07,875 - INFO - 
+Time taken 1:48:57 (h:mm:ss)
+2022-08-19 BST 20:48:07,875 - INFO - 
+End of log for run 2022-08-19_BST_18:59:11,337_l_66_4hps_050
