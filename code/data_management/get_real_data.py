@@ -95,7 +95,7 @@ def get_sachs(file_nos_to_load=None):
 
 
 
-def get_sachs_data(name):
+def get_sachs_data(name, n_real_runs=1):
 	"""
 	Helper function for get_sachs
 
@@ -111,7 +111,7 @@ def get_sachs_data(name):
 	else:
 		raise NotImplementedError
 
-	return [(X, adj_true)]
+	return [(X, adj_true)] * n_real_runs
 
 
 if __name__ == '__main__':

@@ -3,6 +3,7 @@
 
 
 import optuna
+import torch
 from torch import nn
 
 from lib import ml_utilities as mlu
@@ -170,6 +171,9 @@ def handle_metrics(X_val_batches, adjacency_true, best_epoch,
 			best_z_adjacency_pred = z_adjacency_pred
 		if  dag_every_epoch or best or (epoch == n_epochs) or (epoch % 100 ==
 		                                                      0):
+			z_adjacency_pred = z_adjacency_pred.squeeze().detach().cpu().numpy() \
+				if isinstance(z_adjacency_pred, torch.Tensor) \
+				else z_adjacency_pred
 			metrics = count_accuracy(adjacency_true, z_adjacency_pred)
 			size = metrics['pred_size']
 			nshd_c = metrics['nshd_c']

@@ -53,7 +53,7 @@ def generate_dag_data(data_category, i, seed):
 	return data.X, data.B
 
 
-def load_dag_data(data_category, dags, n_real_runs):
+def load_dag_data(data_category, dags, n_real_runs=1):
 	if data_category == 'real':
 		return get_sachs_data(dags, n_real_runs)
 	assert isinstance(dags, str)
