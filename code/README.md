@@ -21,9 +21,8 @@ Start by running `example.ipynb` for a demonstration.  The
   created by code in `experiments/`
 - `collated_results/` where most of the figures and tables for the 
   thesis were produced
-- `data_management/` contains code to create synthetic DAGs/data, with 
-  `create_dags.py` being the file to run to create new synthetic DAGs and 
-  data, and code to use both synthetic and real data
+- `data_management/` contains code to create synthetic DAGs/data and code 
+  to use both synthetic and real data
 - `discrete_backprop/` I-MLE and other discrete backprop methods.  Based on 
   the I-MLE code framework
 - `experiments/` code that generates cluster `qsub` shell files placed in 
@@ -41,6 +40,7 @@ Start by running `example.ipynb` for a demonstration.  The
 - TODO delete `old/`
 - `utils/` miscellaneous utilities for DAG-DB
 - `wandb/` stores data created and used by wandb
+- `create_dags.py` the main code to create new synthetic DAGs and data 
 - `example.ipynb` the example mentioned above - start here
 - `main_dag.py` the main program for running DAG-DB.
 
