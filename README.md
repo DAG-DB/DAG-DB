@@ -3,7 +3,8 @@
 This is the repo for the UCL Machine Learning MSc (2021-22) thesis by 
 candidate RTSC3. It contains the DAG-DB framework for learning directed 
 acyclic 
-graphs (**DAG**s) by **D**iscrete **B**ackpropagation. 
+graphs (**DAG**s) by **D**iscrete **B**ackpropagation.  The full thesis is 
+in the `thesis/` directory (see [below](#Using-DAG-DB) for file password).
 
 ## Abstract
 
@@ -65,7 +66,7 @@ As described in `code/README.md`, some experiments use clones of other repos:
 ## Using DAG-DB
 
 Go to './code' for `example.ipynb` and a README with further details.  The 
-repo contents are as follows:
+overall repo contents are as follows:
 
 - `code/` project code, probably the first place to visit.  Includes more 
   detailed README.md for the code
@@ -76,6 +77,9 @@ repo contents are as follows:
   certain experiments
 - `models/` to contain any saved models
 - `results/` contains csv files with results from certain experiments
+- `thesis/` contains the UCL MSc thesis associated with this repo.  Needs a 
+  password (to avoid TurnItIn problems) which is the file name without any 
+  extension
 - `environment.yml` details of the Python 3.10 environment for DAG-DB
 - `LICENCE`
 - this `README.md`
